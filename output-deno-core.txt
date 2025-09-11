@@ -1,0 +1,1456 @@
+    Updating git repository `https://github.com/nanvix/clang-sys`
+    Updating git repository `https://github.com/nanvix/rust-errno`
+    Updating git repository `https://github.com/nanvix/fslock`
+    Updating git repository `https://github.com/nanvix/libc`
+    Updating git repository `https://github.com/nanvix/rust_libloading`
+    Updating git repository `https://github.com/nanvix/rusty_v8`
+warning: Patch `errno v0.3.13 (https://github.com/nanvix/rust-errno?branch=nanvix%2Fv0.3.13#a024a242)` was not used in the crate graph.
+Patch `libc v0.2.174 (https://github.com/nanvix/libc?rev=87fbecbfbe5d870f007dbf77dd46c17197b29384#87fbecbf)` was not used in the crate graph.
+Patch `libloading v0.8.8 (https://github.com/nanvix/rust_libloading?branch=nanvix%2Fv0.8.8#db9e515c)` was not used in the crate graph.
+Check that the patched package version and available features are compatible
+with the dependency requirements. If the patch has a different version from
+what is locked in the Cargo.lock file, run `cargo update` to use the new
+version. This may also occur with an optional dependency that is not enabled.
+     Locking 3 packages to latest compatible versions
+      Adding clang-sys v1.8.1 (https://github.com/nanvix/clang-sys?rev=ee92b8a58fa3031b4fd34bf2e15906f016984263#ee92b8a5)
+      Adding fslock v0.2.1 (https://github.com/nanvix/fslock?branch=nanvix%2Fv0.2.1#d4d96e80)
+      Adding v8 v137.2.0 (https://github.com/nanvix/rusty_v8?rev=209cdea48458e5fdea7e0a907240511586968675#209cdea4)
+       Fresh autocfg v1.4.0
+       Fresh version_check v0.9.4
+       Fresh cfg-if v1.0.0
+warning: unexpected `cfg` condition name: `doc_cfg`
+  --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rand_core-0.6.4/src/lib.rs:38:13
+   |
+38 | #![cfg_attr(doc_cfg, feature(doc_cfg))]
+   |             ^^^^^^^
+   |
+   = help: expected names are: `docsrs`, `feature`, and `test` and 31 more
+   = help: consider using a Cargo feature instead
+   = help: or consider adding in `Cargo.toml` the `check-cfg` lint config for the lint:
+            [lints.rust]
+            unexpected_cfgs = { level = "warn", check-cfg = ['cfg(doc_cfg)'] }
+   = help: or consider adding `println!("cargo::rustc-check-cfg=cfg(doc_cfg)");` to the top of the `build.rs`
+   = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+   = note: `#[warn(unexpected_cfgs)]` on by default
+
+warning: `rand_core` (lib) generated 1 warning
+warning: unexpected `cfg` condition name: `doc_cfg`
+  --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rand-0.8.5/src/lib.rs:53:13
+   |
+53 | #![cfg_attr(doc_cfg, feature(doc_cfg))]
+   |             ^^^^^^^
+   |
+   = help: expected names are: `docsrs`, `feature`, and `test` and 31 more
+   = help: consider using a Cargo feature instead
+   = help: or consider adding in `Cargo.toml` the `check-cfg` lint config for the lint:
+            [lints.rust]
+            unexpected_cfgs = { level = "warn", check-cfg = ['cfg(doc_cfg)'] }
+   = help: or consider adding `println!("cargo::rustc-check-cfg=cfg(doc_cfg)");` to the top of the `build.rs`
+   = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+   = note: `#[warn(unexpected_cfgs)]` on by default
+
+warning: unexpected `cfg` condition name: `features`
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rand-0.8.5/src/distributions/distribution.rs:162:7
+    |
+162 | #[cfg(features = "nightly")]
+    |       ^^^^^^^^^^^^^^^^^^^^
+    |
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+help: there is a config with a similar name and value
+    |
+162 - #[cfg(features = "nightly")]
+162 + #[cfg(feature = "nightly")]
+    |
+
+warning: unexpected `cfg` condition name: `std`
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rand-0.8.5/src/distributions/utils.rs:235:11
+    |
+235 | #[cfg(not(std))]
+    |           ^^^ help: found config with similar value: `feature = "std"`
+    |
+    = help: consider using a Cargo feature instead
+    = help: or consider adding in `Cargo.toml` the `check-cfg` lint config for the lint:
+             [lints.rust]
+             unexpected_cfgs = { level = "warn", check-cfg = ['cfg(std)'] }
+    = help: or consider adding `println!("cargo::rustc-check-cfg=cfg(std)");` to the top of the `build.rs`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition name: `std`
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rand-0.8.5/src/distributions/utils.rs:291:19
+    |
+291 |         #[cfg(not(std))]
+    |                   ^^^ help: found config with similar value: `feature = "std"`
+...
+359 | scalar_float_impl!(f32, u32);
+    | ---------------------------- in this macro invocation
+    |
+    = help: consider using a Cargo feature instead
+    = help: or consider adding in `Cargo.toml` the `check-cfg` lint config for the lint:
+             [lints.rust]
+             unexpected_cfgs = { level = "warn", check-cfg = ['cfg(std)'] }
+    = help: or consider adding `println!("cargo::rustc-check-cfg=cfg(std)");` to the top of the `build.rs`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+    = note: this warning originates in the macro `scalar_float_impl` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: unexpected `cfg` condition name: `std`
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rand-0.8.5/src/distributions/utils.rs:291:19
+    |
+291 |         #[cfg(not(std))]
+    |                   ^^^ help: found config with similar value: `feature = "std"`
+...
+360 | scalar_float_impl!(f64, u64);
+    | ---------------------------- in this macro invocation
+    |
+    = help: consider using a Cargo feature instead
+    = help: or consider adding in `Cargo.toml` the `check-cfg` lint config for the lint:
+             [lints.rust]
+             unexpected_cfgs = { level = "warn", check-cfg = ['cfg(std)'] }
+    = help: or consider adding `println!("cargo::rustc-check-cfg=cfg(std)");` to the top of the `build.rs`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+    = note: this warning originates in the macro `scalar_float_impl` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: unexpected `cfg` condition name: `doc_cfg`
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rand-0.8.5/src/rng.rs:395:12
+    |
+395 | #[cfg_attr(doc_cfg, doc(cfg(feature = "min_const_gen")))]
+    |            ^^^^^^^
+    |
+    = help: consider using a Cargo feature instead
+    = help: or consider adding in `Cargo.toml` the `check-cfg` lint config for the lint:
+             [lints.rust]
+             unexpected_cfgs = { level = "warn", check-cfg = ['cfg(doc_cfg)'] }
+    = help: or consider adding `println!("cargo::rustc-check-cfg=cfg(doc_cfg)");` to the top of the `build.rs`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition name: `doc_cfg`
+  --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rand-0.8.5/src/rngs/mod.rs:99:12
+   |
+99 | #[cfg_attr(doc_cfg, doc(cfg(feature = "std")))]
+   |            ^^^^^^^
+   |
+   = help: consider using a Cargo feature instead
+   = help: or consider adding in `Cargo.toml` the `check-cfg` lint config for the lint:
+            [lints.rust]
+            unexpected_cfgs = { level = "warn", check-cfg = ['cfg(doc_cfg)'] }
+   = help: or consider adding `println!("cargo::rustc-check-cfg=cfg(doc_cfg)");` to the top of the `build.rs`
+   = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition name: `doc_cfg`
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rand-0.8.5/src/rngs/mod.rs:118:12
+    |
+118 | #[cfg_attr(doc_cfg, doc(cfg(feature = "getrandom")))]
+    |            ^^^^^^^
+    |
+    = help: consider using a Cargo feature instead
+    = help: or consider adding in `Cargo.toml` the `check-cfg` lint config for the lint:
+             [lints.rust]
+             unexpected_cfgs = { level = "warn", check-cfg = ['cfg(doc_cfg)'] }
+    = help: or consider adding `println!("cargo::rustc-check-cfg=cfg(doc_cfg)");` to the top of the `build.rs`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition name: `doc_cfg`
+  --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rand-0.8.5/src/rngs/small.rs:79:12
+   |
+79 | #[cfg_attr(doc_cfg, doc(cfg(feature = "small_rng")))]
+   |            ^^^^^^^
+   |
+   = help: consider using a Cargo feature instead
+   = help: or consider adding in `Cargo.toml` the `check-cfg` lint config for the lint:
+            [lints.rust]
+            unexpected_cfgs = { level = "warn", check-cfg = ['cfg(doc_cfg)'] }
+   = help: or consider adding `println!("cargo::rustc-check-cfg=cfg(doc_cfg)");` to the top of the `build.rs`
+   = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: trait `Float` is never used
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rand-0.8.5/src/distributions/utils.rs:238:18
+    |
+238 | pub(crate) trait Float: Sized {
+    |                  ^^^^^
+    |
+    = note: `#[warn(dead_code)]` on by default
+
+warning: associated items `lanes`, `extract`, and `replace` are never used
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rand-0.8.5/src/distributions/utils.rs:247:8
+    |
+245 | pub(crate) trait FloatAsSIMD: Sized {
+    |                  ----------- associated items in this trait
+246 |     #[inline(always)]
+247 |     fn lanes() -> usize {
+    |        ^^^^^
+...
+255 |     fn extract(self, index: usize) -> Self {
+    |        ^^^^^^^
+...
+260 |     fn replace(self, index: usize, new_value: Self) -> Self {
+    |        ^^^^^^^
+
+warning: method `all` is never used
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rand-0.8.5/src/distributions/utils.rs:268:8
+    |
+266 | pub(crate) trait BoolAsSIMD: Sized {
+    |                  ---------- method in this trait
+267 |     fn any(self) -> bool;
+268 |     fn all(self) -> bool;
+    |        ^^^
+
+warning: elided lifetime has a name
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/regex-automata-0.4.6/src/dfa/onepass.rs:524:45
+    |
+522 | impl<'a> InternalBuilder<'a> {
+    |      -- lifetime `'a` declared here
+523 |     /// Create a new builder with an initial empty DFA.
+524 |     fn new(config: Config, nfa: &'a NFA) -> InternalBuilder {
+    |                                             ^^^^^^^^^^^^^^^ this elided lifetime gets resolved as `'a`
+    |
+    = note: `#[warn(elided_named_lifetimes)]` on by default
+
+       Fresh shlex v1.3.0
+warning: unexpected `cfg` condition name: `manual_codegen_check`
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/shlex-1.3.0/src/bytes.rs:353:12
+    |
+353 | #[cfg_attr(manual_codegen_check, inline(never))]
+    |            ^^^^^^^^^^^^^^^^^^^^
+    |
+    = help: expected names are: `docsrs`, `feature`, and `test` and 31 more
+    = help: consider using a Cargo feature instead
+    = help: or consider adding in `Cargo.toml` the `check-cfg` lint config for the lint:
+             [lints.rust]
+             unexpected_cfgs = { level = "warn", check-cfg = ['cfg(manual_codegen_check)'] }
+    = help: or consider adding `println!("cargo::rustc-check-cfg=cfg(manual_codegen_check)");` to the top of the `build.rs`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+    = note: `#[warn(unexpected_cfgs)]` on by default
+
+warning: `rand` (lib) generated 12 warnings
+warning: `regex-automata` (lib) generated 1 warning
+warning: `shlex` (lib) generated 1 warning
+   Compiling regex v1.10.4
+       Fresh stable_deref_trait v1.2.0
+   Compiling synstructure v0.13.1
+   Compiling serde_derive v1.0.219
+   Compiling zerovec-derive v0.10.3
+   Compiling displaydoc v0.2.5
+   Compiling icu_provider_macros v1.5.0
+   Compiling swc_macros_common v1.0.0
+     Running `CARGO=/home/danbugs/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin/cargo CARGO_CRATE_NAME=regex CARGO_MANIFEST_DIR=/home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/regex-1.10.4 CARGO_MANIFEST_PATH=/home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/regex-1.10.4/Cargo.toml CARGO_PKG_AUTHORS='The Rust Project Developers:Andrew Gallant <jamslam@gmail.com>' CARGO_PKG_DESCRIPTION='An implementation of regular expressions for Rust. This implementation uses
+finite automata and guarantees linear time matching on all inputs.
+' CARGO_PKG_HOMEPAGE='https://github.com/rust-lang/regex' CARGO_PKG_LICENSE='MIT OR Apache-2.0' CARGO_PKG_LICENSE_FILE='' CARGO_PKG_NAME=regex CARGO_PKG_README=README.md CARGO_PKG_REPOSITORY='https://github.com/rust-lang/regex' CARGO_PKG_RUST_VERSION=1.65 CARGO_PKG_VERSION=1.10.4 CARGO_PKG_VERSION_MAJOR=1 CARGO_PKG_VERSION_MINOR=10 CARGO_PKG_VERSION_PATCH=4 CARGO_PKG_VERSION_PRE='' LD_LIBRARY_PATH='/home/danbugs/repos/deno_core/target/debug/deps:/home/danbugs/.rustup/toolchains/nanvix-x86-nightly/lib' /home/danbugs/.rustup/toolchains/nanvix-x86-nightly/bin/rustc --crate-name regex --edition=2021 /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/regex-1.10.4/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --cfg 'feature="default"' --cfg 'feature="perf"' --cfg 'feature="perf-backtrack"' --cfg 'feature="perf-cache"' --cfg 'feature="perf-dfa"' --cfg 'feature="perf-inline"' --cfg 'feature="perf-literal"' --cfg 'feature="perf-onepass"' --cfg 'feature="std"' --cfg 'feature="unicode"' --cfg 'feature="unicode-age"' --cfg 'feature="unicode-bool"' --cfg 'feature="unicode-case"' --cfg 'feature="unicode-gencat"' --cfg 'feature="unicode-perl"' --cfg 'feature="unicode-script"' --cfg 'feature="unicode-segment"' --check-cfg 'cfg(docsrs,test)' --check-cfg 'cfg(feature, values("default", "logging", "pattern", "perf", "perf-backtrack", "perf-cache", "perf-dfa", "perf-dfa-full", "perf-inline", "perf-literal", "perf-onepass", "std", "unicode", "unicode-age", "unicode-bool", "unicode-case", "unicode-gencat", "unicode-perl", "unicode-script", "unicode-segment", "unstable", "use_std"))' -C metadata=1e4ab6d1ba712590 -C extra-filename=-054fd40b8d52edcc --out-dir /home/danbugs/repos/deno_core/target/debug/deps -L dependency=/home/danbugs/repos/deno_core/target/debug/deps --extern aho_corasick=/home/danbugs/repos/deno_core/target/debug/deps/libaho_corasick-c731e6c6881e0ef8.rmeta --extern memchr=/home/danbugs/repos/deno_core/target/debug/deps/libmemchr-08a87d79b356b15c.rmeta --extern regex_automata=/home/danbugs/repos/deno_core/target/debug/deps/libregex_automata-2ea3d99596d11ca1.rmeta --extern regex_syntax=/home/danbugs/repos/deno_core/target/debug/deps/libregex_syntax-38c73f1d95f7e91f.rmeta --cap-lints warn`
+     Running `CARGO=/home/danbugs/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin/cargo CARGO_CRATE_NAME=synstructure CARGO_MANIFEST_DIR=/home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/synstructure-0.13.1 CARGO_MANIFEST_PATH=/home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/synstructure-0.13.1/Cargo.toml CARGO_PKG_AUTHORS='Nika Layzell <nika@thelayzells.com>' CARGO_PKG_DESCRIPTION='Helper methods and macros for custom derives' CARGO_PKG_HOMEPAGE='' CARGO_PKG_LICENSE=MIT CARGO_PKG_LICENSE_FILE='' CARGO_PKG_NAME=synstructure CARGO_PKG_README=README.md CARGO_PKG_REPOSITORY='https://github.com/mystor/synstructure' CARGO_PKG_RUST_VERSION='' CARGO_PKG_VERSION=0.13.1 CARGO_PKG_VERSION_MAJOR=0 CARGO_PKG_VERSION_MINOR=13 CARGO_PKG_VERSION_PATCH=1 CARGO_PKG_VERSION_PRE='' LD_LIBRARY_PATH='/home/danbugs/repos/deno_core/target/debug/deps:/home/danbugs/.rustup/toolchains/nanvix-x86-nightly/lib' /home/danbugs/.rustup/toolchains/nanvix-x86-nightly/bin/rustc --crate-name synstructure --edition=2018 /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/synstructure-0.13.1/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --cfg 'feature="default"' --cfg 'feature="proc-macro"' --check-cfg 'cfg(docsrs,test)' --check-cfg 'cfg(feature, values("default", "proc-macro"))' -C metadata=7b35395e35167adf -C extra-filename=-0641c622db869983 --out-dir /home/danbugs/repos/deno_core/target/debug/deps -L dependency=/home/danbugs/repos/deno_core/target/debug/deps --extern proc_macro2=/home/danbugs/repos/deno_core/target/debug/deps/libproc_macro2-e3bf55716bd4b573.rmeta --extern quote=/home/danbugs/repos/deno_core/target/debug/deps/libquote-dc7603a76a4633ac.rmeta --extern syn=/home/danbugs/repos/deno_core/target/debug/deps/libsyn-a0bc00c588cdc35b.rmeta --cap-lints warn`
+     Running `CARGO=/home/danbugs/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin/cargo CARGO_CRATE_NAME=serde_derive CARGO_MANIFEST_DIR=/home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_derive-1.0.219 CARGO_MANIFEST_PATH=/home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_derive-1.0.219/Cargo.toml CARGO_PKG_AUTHORS='Erick Tryzelaar <erick.tryzelaar@gmail.com>:David Tolnay <dtolnay@gmail.com>' CARGO_PKG_DESCRIPTION='Macros 1.1 implementation of #[derive(Serialize, Deserialize)]' CARGO_PKG_HOMEPAGE='https://serde.rs' CARGO_PKG_LICENSE='MIT OR Apache-2.0' CARGO_PKG_LICENSE_FILE='' CARGO_PKG_NAME=serde_derive CARGO_PKG_README=crates-io.md CARGO_PKG_REPOSITORY='https://github.com/serde-rs/serde' CARGO_PKG_RUST_VERSION=1.61 CARGO_PKG_VERSION=1.0.219 CARGO_PKG_VERSION_MAJOR=1 CARGO_PKG_VERSION_MINOR=0 CARGO_PKG_VERSION_PATCH=219 CARGO_PKG_VERSION_PRE='' LD_LIBRARY_PATH='/home/danbugs/repos/deno_core/target/debug/deps:/home/danbugs/.rustup/toolchains/nanvix-x86-nightly/lib' /home/danbugs/.rustup/toolchains/nanvix-x86-nightly/bin/rustc --crate-name serde_derive --edition=2015 /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_derive-1.0.219/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type proc-macro --emit=dep-info,link -C prefer-dynamic -C embed-bitcode=no -C debuginfo=2 --cfg 'feature="default"' --check-cfg 'cfg(docsrs,test)' --check-cfg 'cfg(feature, values("default", "deserialize_in_place"))' -C metadata=c3b8ed34b0b871b9 -C extra-filename=-2ccedba8d6b53b46 --out-dir /home/danbugs/repos/deno_core/target/debug/deps -L dependency=/home/danbugs/repos/deno_core/target/debug/deps --extern proc_macro2=/home/danbugs/repos/deno_core/target/debug/deps/libproc_macro2-e3bf55716bd4b573.rlib --extern quote=/home/danbugs/repos/deno_core/target/debug/deps/libquote-dc7603a76a4633ac.rlib --extern syn=/home/danbugs/repos/deno_core/target/debug/deps/libsyn-a0bc00c588cdc35b.rlib --extern proc_macro --cap-lints warn`
+     Running `CARGO=/home/danbugs/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin/cargo CARGO_CRATE_NAME=displaydoc CARGO_MANIFEST_DIR=/home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/displaydoc-0.2.5 CARGO_MANIFEST_PATH=/home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/displaydoc-0.2.5/Cargo.toml CARGO_PKG_AUTHORS='Jane Lusby <jlusby@yaah.dev>' CARGO_PKG_DESCRIPTION='A derive macro for implementing the display Trait via a doc comment and string interpolation
+' CARGO_PKG_HOMEPAGE='https://github.com/yaahc/displaydoc' CARGO_PKG_LICENSE='MIT OR Apache-2.0' CARGO_PKG_LICENSE_FILE='' CARGO_PKG_NAME=displaydoc CARGO_PKG_README=README.md CARGO_PKG_REPOSITORY='https://github.com/yaahc/displaydoc' CARGO_PKG_RUST_VERSION=1.56.0 CARGO_PKG_VERSION=0.2.5 CARGO_PKG_VERSION_MAJOR=0 CARGO_PKG_VERSION_MINOR=2 CARGO_PKG_VERSION_PATCH=5 CARGO_PKG_VERSION_PRE='' LD_LIBRARY_PATH='/home/danbugs/repos/deno_core/target/debug/deps:/home/danbugs/.rustup/toolchains/nanvix-x86-nightly/lib' /home/danbugs/.rustup/toolchains/nanvix-x86-nightly/bin/rustc --crate-name displaydoc --edition=2021 /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/displaydoc-0.2.5/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type proc-macro --emit=dep-info,link -C prefer-dynamic -C embed-bitcode=no -C debuginfo=2 --check-cfg 'cfg(docsrs,test)' --check-cfg 'cfg(feature, values("default", "std"))' -C metadata=c0f303ca97ed246e -C extra-filename=-85c10826d6c03ffe --out-dir /home/danbugs/repos/deno_core/target/debug/deps -L dependency=/home/danbugs/repos/deno_core/target/debug/deps --extern proc_macro2=/home/danbugs/repos/deno_core/target/debug/deps/libproc_macro2-e3bf55716bd4b573.rlib --extern quote=/home/danbugs/repos/deno_core/target/debug/deps/libquote-dc7603a76a4633ac.rlib --extern syn=/home/danbugs/repos/deno_core/target/debug/deps/libsyn-a0bc00c588cdc35b.rlib --extern proc_macro --cap-lints warn`
+     Running `CARGO=/home/danbugs/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin/cargo CARGO_CRATE_NAME=zerovec_derive CARGO_MANIFEST_DIR=/home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zerovec-derive-0.10.3 CARGO_MANIFEST_PATH=/home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zerovec-derive-0.10.3/Cargo.toml CARGO_PKG_AUTHORS='Manish Goregaokar <manishsmail@gmail.com>' CARGO_PKG_DESCRIPTION='Custom derive for the zerovec crate' CARGO_PKG_HOMEPAGE='' CARGO_PKG_LICENSE=Unicode-3.0 CARGO_PKG_LICENSE_FILE='' CARGO_PKG_NAME=zerovec-derive CARGO_PKG_README=README.md CARGO_PKG_REPOSITORY='https://github.com/unicode-org/icu4x' CARGO_PKG_RUST_VERSION='' CARGO_PKG_VERSION=0.10.3 CARGO_PKG_VERSION_MAJOR=0 CARGO_PKG_VERSION_MINOR=10 CARGO_PKG_VERSION_PATCH=3 CARGO_PKG_VERSION_PRE='' LD_LIBRARY_PATH='/home/danbugs/repos/deno_core/target/debug/deps:/home/danbugs/.rustup/toolchains/nanvix-x86-nightly/lib' /home/danbugs/.rustup/toolchains/nanvix-x86-nightly/bin/rustc --crate-name zerovec_derive --edition=2021 /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zerovec-derive-0.10.3/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type proc-macro --emit=dep-info,link -C prefer-dynamic -C embed-bitcode=no -C debuginfo=2 --check-cfg 'cfg(docsrs,test)' --check-cfg 'cfg(feature, values())' -C metadata=2891da5ad1f4610e -C extra-filename=-8e46c0d267e4356b --out-dir /home/danbugs/repos/deno_core/target/debug/deps -L dependency=/home/danbugs/repos/deno_core/target/debug/deps --extern proc_macro2=/home/danbugs/repos/deno_core/target/debug/deps/libproc_macro2-e3bf55716bd4b573.rlib --extern quote=/home/danbugs/repos/deno_core/target/debug/deps/libquote-dc7603a76a4633ac.rlib --extern syn=/home/danbugs/repos/deno_core/target/debug/deps/libsyn-a0bc00c588cdc35b.rlib --extern proc_macro --cap-lints warn`
+     Running `CARGO=/home/danbugs/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin/cargo CARGO_CRATE_NAME=icu_provider_macros CARGO_MANIFEST_DIR=/home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/icu_provider_macros-1.5.0 CARGO_MANIFEST_PATH=/home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/icu_provider_macros-1.5.0/Cargo.toml CARGO_PKG_AUTHORS='The ICU4X Project Developers' CARGO_PKG_DESCRIPTION='Proc macros for ICU data providers' CARGO_PKG_HOMEPAGE='https://icu4x.unicode.org' CARGO_PKG_LICENSE=Unicode-3.0 CARGO_PKG_LICENSE_FILE='' CARGO_PKG_NAME=icu_provider_macros CARGO_PKG_README=README.md CARGO_PKG_REPOSITORY='https://github.com/unicode-org/icu4x' CARGO_PKG_RUST_VERSION=1.67 CARGO_PKG_VERSION=1.5.0 CARGO_PKG_VERSION_MAJOR=1 CARGO_PKG_VERSION_MINOR=5 CARGO_PKG_VERSION_PATCH=0 CARGO_PKG_VERSION_PRE='' LD_LIBRARY_PATH='/home/danbugs/repos/deno_core/target/debug/deps:/home/danbugs/.rustup/toolchains/nanvix-x86-nightly/lib' /home/danbugs/.rustup/toolchains/nanvix-x86-nightly/bin/rustc --crate-name icu_provider_macros --edition=2021 /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/icu_provider_macros-1.5.0/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type proc-macro --emit=dep-info,link -C prefer-dynamic -C embed-bitcode=no -C debuginfo=2 --check-cfg 'cfg(docsrs,test)' --check-cfg 'cfg(feature, values())' -C metadata=941a0a3c876c0724 -C extra-filename=-cd2993ed27cb2e42 --out-dir /home/danbugs/repos/deno_core/target/debug/deps -L dependency=/home/danbugs/repos/deno_core/target/debug/deps --extern proc_macro2=/home/danbugs/repos/deno_core/target/debug/deps/libproc_macro2-e3bf55716bd4b573.rlib --extern quote=/home/danbugs/repos/deno_core/target/debug/deps/libquote-dc7603a76a4633ac.rlib --extern syn=/home/danbugs/repos/deno_core/target/debug/deps/libsyn-a0bc00c588cdc35b.rlib --extern proc_macro --cap-lints warn`
+   Compiling libc v0.2.171
+     Running `CARGO=/home/danbugs/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin/cargo CARGO_CRATE_NAME=swc_macros_common CARGO_MANIFEST_DIR=/home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/swc_macros_common-1.0.0 CARGO_MANIFEST_PATH=/home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/swc_macros_common-1.0.0/Cargo.toml CARGO_PKG_AUTHORS='강동윤 <kdy1997.dev@gmail.com>' CARGO_PKG_DESCRIPTION='Common utilities for swc macros.' CARGO_PKG_HOMEPAGE='' CARGO_PKG_LICENSE=Apache-2.0 CARGO_PKG_LICENSE_FILE='' CARGO_PKG_NAME=swc_macros_common CARGO_PKG_README='' CARGO_PKG_REPOSITORY='https://github.com/swc-project/swc.git' CARGO_PKG_RUST_VERSION='' CARGO_PKG_VERSION=1.0.0 CARGO_PKG_VERSION_MAJOR=1 CARGO_PKG_VERSION_MINOR=0 CARGO_PKG_VERSION_PATCH=0 CARGO_PKG_VERSION_PRE='' LD_LIBRARY_PATH='/home/danbugs/repos/deno_core/target/debug/deps:/home/danbugs/.rustup/toolchains/nanvix-x86-nightly/lib' /home/danbugs/.rustup/toolchains/nanvix-x86-nightly/bin/rustc --crate-name swc_macros_common --edition=2021 /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/swc_macros_common-1.0.0/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --check-cfg 'cfg(docsrs,test)' --check-cfg 'cfg(feature, values())' -C metadata=82a2f3c6086f3e70 -C extra-filename=-31a770d6ca1c3bd8 --out-dir /home/danbugs/repos/deno_core/target/debug/deps -L dependency=/home/danbugs/repos/deno_core/target/debug/deps --extern proc_macro2=/home/danbugs/repos/deno_core/target/debug/deps/libproc_macro2-e3bf55716bd4b573.rmeta --extern quote=/home/danbugs/repos/deno_core/target/debug/deps/libquote-dc7603a76a4633ac.rmeta --extern syn=/home/danbugs/repos/deno_core/target/debug/deps/libsyn-a0bc00c588cdc35b.rmeta --cap-lints warn`
+     Running `CARGO=/home/danbugs/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin/cargo CARGO_CRATE_NAME=libc CARGO_MANIFEST_DIR=/home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171 CARGO_MANIFEST_PATH=/home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/Cargo.toml CARGO_PKG_AUTHORS='The Rust Project Developers' CARGO_PKG_DESCRIPTION='Raw FFI bindings to platform libraries like libc.
+' CARGO_PKG_HOMEPAGE='https://github.com/rust-lang/libc' CARGO_PKG_LICENSE='MIT OR Apache-2.0' CARGO_PKG_LICENSE_FILE='' CARGO_PKG_NAME=libc CARGO_PKG_README=README.md CARGO_PKG_REPOSITORY='https://github.com/rust-lang/libc' CARGO_PKG_RUST_VERSION=1.63 CARGO_PKG_VERSION=0.2.171 CARGO_PKG_VERSION_MAJOR=0 CARGO_PKG_VERSION_MINOR=2 CARGO_PKG_VERSION_PATCH=171 CARGO_PKG_VERSION_PRE='' LD_LIBRARY_PATH='/home/danbugs/repos/deno_core/target/debug/deps:/home/danbugs/.rustup/toolchains/nanvix-x86-nightly/lib' OUT_DIR=/home/danbugs/repos/deno_core/target/i686-unknown-nanvix/debug/build/libc-a8a6b5e9270cf140/out /home/danbugs/.rustup/toolchains/nanvix-x86-nightly/bin/rustc --crate-name libc --edition=2021 /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --cfg 'feature="default"' --cfg 'feature="std"' --check-cfg 'cfg(docsrs,test)' --check-cfg 'cfg(feature, values("align", "const-extern-fn", "default", "extra_traits", "rustc-dep-of-std", "rustc-std-workspace-core", "std", "use_std"))' -C metadata=bf962e6fc8c356b3 -C extra-filename=-ee04305dbc831244 --out-dir /home/danbugs/repos/deno_core/target/i686-unknown-nanvix/debug/deps --target i686-unknown-nanvix -L dependency=/home/danbugs/repos/deno_core/target/i686-unknown-nanvix/debug/deps -L dependency=/home/danbugs/repos/deno_core/target/debug/deps --cap-lints warn -C target-cpu=i686 -C relocation-model=static -C link-arg=/tmp/nanvix_deno_core_stubs.o -C link-arg=-T/home/danbugs/repos/nanvix/build/user/linker/x86/user.ld -C link-arg=-L/home/danbugs/repos/nanvix-toolchain-v09x-copy//lib/i686-unknown-nanvix/ -C link-arg=-lc++ -C link-arg=-lc++abi -C link-arg=-L/home/danbugs/repos/nanvix-toolchain-v09x-copy//i686-nanvix/lib/ -C link-arg=-lc -C link-arg=-lm -C link-arg=-L/home/danbugs/repos/nanvix-toolchain-v09x-copy//lib/clang/21/lib/i386-unknown-nanvix/ -C link-arg=-lclang_rt.builtins --cfg freebsd11 --cfg libc_const_extern_fn --check-cfg 'cfg(emscripten_old_stat_abi)' --check-cfg 'cfg(espidf_time32)' --check-cfg 'cfg(freebsd10)' --check-cfg 'cfg(freebsd11)' --check-cfg 'cfg(freebsd12)' --check-cfg 'cfg(freebsd13)' --check-cfg 'cfg(freebsd14)' --check-cfg 'cfg(freebsd15)' --check-cfg 'cfg(libc_const_extern_fn)' --check-cfg 'cfg(libc_deny_warnings)' --check-cfg 'cfg(libc_thread_local)' --check-cfg 'cfg(libc_ctest)' --check-cfg 'cfg(linux_time_bits64)' --check-cfg 'cfg(target_os,values("switch","aix","ohos","hurd","rtems","visionos","nuttx","cygwin"))' --check-cfg 'cfg(target_env,values("illumos","wasi","aix","ohos"))' --check-cfg 'cfg(target_arch,values("loongarch64","mips32r6","mips64r6","csky"))'`
+error[E0412]: cannot find type `time_t` in this scope
+  --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:55:21
+   |
+11 | pub type size_t = usize;
+   | ------------------------ similarly named type alias `size_t` defined here
+...
+55 |         pub actime: time_t,
+   |                     ^^^^^^ help: a type alias with a similar name exists: `size_t`
+
+error[E0412]: cannot find type `time_t` in this scope
+  --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:56:22
+   |
+11 | pub type size_t = usize;
+   | ------------------------ similarly named type alias `size_t` defined here
+...
+56 |         pub modtime: time_t,
+   |                      ^^^^^^ help: a type alias with a similar name exists: `size_t`
+
+error[E0412]: cannot find type `time_t` in this scope
+  --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:55:21
+   |
+11 | pub type size_t = usize;
+   | ------------------------ similarly named type alias `size_t` defined here
+...
+55 |         pub actime: time_t,
+   |                     ^^^^^^
+   |
+help: a type alias with a similar name exists
+   |
+55 -         pub actime: time_t,
+55 +         pub actime: size_t,
+   |
+help: you might be missing a type parameter
+  --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/macros.rs:118:26
+   |
+118|             pub struct $i<time_t> { $($field)* }
+   |                          ++++++++
+
+error[E0412]: cannot find type `time_t` in this scope
+  --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:61:21
+   |
+11 | pub type size_t = usize;
+   | ------------------------ similarly named type alias `size_t` defined here
+...
+61 |         pub tv_sec: time_t,
+   |                     ^^^^^^ help: a type alias with a similar name exists: `size_t`
+
+error[E0412]: cannot find type `suseconds_t` in this scope
+  --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:62:22
+   |
+62 |         pub tv_usec: suseconds_t,
+   |                      ^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `time_t` in this scope
+  --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:61:21
+   |
+11 | pub type size_t = usize;
+   | ------------------------ similarly named type alias `size_t` defined here
+...
+61 |         pub tv_sec: time_t,
+   |                     ^^^^^^
+   |
+help: a type alias with a similar name exists
+   |
+61 -         pub tv_sec: time_t,
+61 +         pub tv_sec: size_t,
+   |
+help: you might be missing a type parameter
+  --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/macros.rs:118:26
+   |
+118|             pub struct $i<time_t> { $($field)* }
+   |                          ++++++++
+
+error[E0412]: cannot find type `suseconds_t` in this scope
+  --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:62:22
+   |
+62 |         pub tv_usec: suseconds_t,
+   |                      ^^^^^^^^^^^ not found in this scope
+   |
+help: you might be missing a type parameter
+  --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/macros.rs:118:26
+   |
+118|             pub struct $i<suseconds_t> { $($field)* }
+   |                          +++++++++++++
+
+error[E0412]: cannot find type `time_t` in this scope
+  --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:68:21
+   |
+11 | pub type size_t = usize;
+   | ------------------------ similarly named type alias `size_t` defined here
+...
+68 |         pub tv_sec: time_t,
+   |                     ^^^^^^ help: a type alias with a similar name exists: `size_t`
+
+error[E0412]: cannot find type `time_t` in this scope
+  --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:68:21
+   |
+11 | pub type size_t = usize;
+   | ------------------------ similarly named type alias `size_t` defined here
+...
+68 |         pub tv_sec: time_t,
+   |                     ^^^^^^
+   |
+help: a type alias with a similar name exists
+   |
+68 -         pub tv_sec: time_t,
+68 +         pub tv_sec: size_t,
+   |
+help: you might be missing a type parameter
+   |
+67 |     pub struct timespec<time_t> {
+   |                        ++++++++
+
+error[E0412]: cannot find type `rlim_t` in this scope
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:76:23
+    |
+76  |         pub rlim_cur: rlim_t,
+    |                       ^^^^^^ help: a struct with a similar name exists: `rlimit`
+    |
+   ::: /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/macros.rs:118:13
+    |
+118 |             pub struct $i { $($field)* }
+    |             ------------- similarly named struct `rlimit` defined here
+
+error[E0412]: cannot find type `rlim_t` in this scope
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:77:23
+    |
+77  |         pub rlim_max: rlim_t,
+    |                       ^^^^^^ help: a struct with a similar name exists: `rlimit`
+    |
+   ::: /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/macros.rs:118:13
+    |
+118 |             pub struct $i { $($field)* }
+    |             ------------- similarly named struct `rlimit` defined here
+
+error[E0412]: cannot find type `rlim_t` in this scope
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:76:23
+    |
+76  |         pub rlim_cur: rlim_t,
+    |                       ^^^^^^
+    |
+   ::: /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/macros.rs:118:13
+    |
+118 |             pub struct $i { $($field)* }
+    |             ------------- similarly named struct `rlimit` defined here
+    |
+help: a struct with a similar name exists
+    |
+76  -         pub rlim_cur: rlim_t,
+76  +         pub rlim_cur: rlimit,
+    |
+help: you might be missing a type parameter
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/macros.rs:118:26
+    |
+118 |             pub struct $i<rlim_t> { $($field)* }
+    |                          ++++++++
+
+error[E0412]: cannot find type `clock_t` in the crate root
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:184:31
+    |
+184 |         pub tms_utime: crate::clock_t,
+    |                               ^^^^^^^ not found in the crate root
+
+error[E0412]: cannot find type `clock_t` in the crate root
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:185:31
+    |
+185 |         pub tms_stime: crate::clock_t,
+    |                               ^^^^^^^ not found in the crate root
+
+error[E0412]: cannot find type `clock_t` in the crate root
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:186:32
+    |
+186 |         pub tms_cutime: crate::clock_t,
+    |                                ^^^^^^^ not found in the crate root
+
+error[E0412]: cannot find type `clock_t` in the crate root
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:187:32
+    |
+187 |         pub tms_cstime: crate::clock_t,
+    |                                ^^^^^^^ not found in the crate root
+
+error[E0412]: cannot find type `mode_t` in the crate root
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:248:27
+    |
+248 | pub const S_ISUID: crate::mode_t = 0o4000;
+    |                           ^^^^^^ not found in the crate root
+
+error[E0412]: cannot find type `mode_t` in the crate root
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:249:27
+    |
+249 | pub const S_ISGID: crate::mode_t = 0o2000;
+    |                           ^^^^^^ not found in the crate root
+
+error[E0412]: cannot find type `mode_t` in the crate root
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:250:27
+    |
+250 | pub const S_ISVTX: crate::mode_t = 0o1000;
+    |                           ^^^^^^ not found in the crate root
+
+error[E0412]: cannot find type `wchar_t` in this scope
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:680:31
+    |
+680 |     pub fn wcslen(buf: *const wchar_t) -> size_t;
+    |                               ^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `wchar_t` in this scope
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:681:52
+    |
+681 |     pub fn wcstombs(dest: *mut c_char, src: *const wchar_t, n: size_t) -> size_t;
+    |                                                    ^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `wchar_t` in this scope
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:684:31
+    |
+684 |     pub fn wmemchr(cx: *const wchar_t, c: wchar_t, n: size_t) -> *mut wchar_t;
+    |                               ^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `wchar_t` in this scope
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:684:43
+    |
+684 |     pub fn wmemchr(cx: *const wchar_t, c: wchar_t, n: size_t) -> *mut wchar_t;
+    |                                           ^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `wchar_t` in this scope
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:684:71
+    |
+684 |     pub fn wmemchr(cx: *const wchar_t, c: wchar_t, n: size_t) -> *mut wchar_t;
+    |                                                                       ^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `passwd` in this scope
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:694:50
+    |
+694 |     pub fn getpwnam(name: *const c_char) -> *mut passwd;
+    |                                                  ^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `passwd` in this scope
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:696:48
+    |
+696 |     pub fn getpwuid(uid: crate::uid_t) -> *mut passwd;
+    |                                                ^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `sockaddr` in this scope
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:736:51
+    |
+736 |     pub fn connect(socket: c_int, address: *const sockaddr, len: socklen_t) -> c_int;
+    |                                                   ^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `socklen_t` in this scope
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:736:66
+    |
+44  | pub type locale_t = *mut c_void;
+    | -------------------------------- similarly named type alias `locale_t` defined here
+...
+736 |     pub fn connect(socket: c_int, address: *const sockaddr, len: socklen_t) -> c_int;
+    |                                                                  ^^^^^^^^^ help: a type alias with a similar name exists: `locale_t`
+
+error[E0412]: cannot find type `sockaddr` in this scope
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:749:48
+    |
+749 |     pub fn accept(socket: c_int, address: *mut sockaddr, address_len: *mut socklen_t) -> c_int;
+    |                                                ^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `socklen_t` in this scope
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:749:76
+    |
+44  | pub type locale_t = *mut c_void;
+    | -------------------------------- similarly named type alias `locale_t` defined here
+...
+749 |     pub fn accept(socket: c_int, address: *mut sockaddr, address_len: *mut socklen_t) -> c_int;
+    |                                                                            ^^^^^^^^^ help: a type alias with a similar name exists: `locale_t`
+
+error[E0412]: cannot find type `sockaddr` in this scope
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:756:53
+    |
+756 |     pub fn getpeername(socket: c_int, address: *mut sockaddr, address_len: *mut socklen_t)
+    |                                                     ^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `socklen_t` in this scope
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:756:81
+    |
+44  | pub type locale_t = *mut c_void;
+    | -------------------------------- similarly named type alias `locale_t` defined here
+...
+756 |     pub fn getpeername(socket: c_int, address: *mut sockaddr, address_len: *mut socklen_t)
+    |                                                                                 ^^^^^^^^^ help: a type alias with a similar name exists: `locale_t`
+
+error[E0412]: cannot find type `sockaddr` in this scope
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:764:53
+    |
+764 |     pub fn getsockname(socket: c_int, address: *mut sockaddr, address_len: *mut socklen_t)
+    |                                                     ^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `socklen_t` in this scope
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:764:81
+    |
+44  | pub type locale_t = *mut c_void;
+    | -------------------------------- similarly named type alias `locale_t` defined here
+...
+764 |     pub fn getsockname(socket: c_int, address: *mut sockaddr, address_len: *mut socklen_t)
+    |                                                                                 ^^^^^^^^^ help: a type alias with a similar name exists: `locale_t`
+
+error[E0412]: cannot find type `socklen_t` in this scope
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:772:21
+    |
+44  | pub type locale_t = *mut c_void;
+    | -------------------------------- similarly named type alias `locale_t` defined here
+...
+772 |         option_len: socklen_t,
+    |                     ^^^^^^^^^ help: a type alias with a similar name exists: `locale_t`
+
+error[E0412]: cannot find type `sockaddr` in this scope
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:803:22
+    |
+803 |         addr: *const sockaddr,
+    |                      ^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `socklen_t` in this scope
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:804:18
+    |
+44  | pub type locale_t = *mut c_void;
+    | -------------------------------- similarly named type alias `locale_t` defined here
+...
+804 |         addrlen: socklen_t,
+    |                  ^^^^^^^^^ help: a type alias with a similar name exists: `locale_t`
+
+error[E0412]: cannot find type `mode_t` in this scope
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:813:45
+    |
+813 |     pub fn chmod(path: *const c_char, mode: mode_t) -> c_int;
+    |                                             ^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `mode_t` in this scope
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:818:36
+    |
+818 |     pub fn fchmod(fd: c_int, mode: mode_t) -> c_int;
+    |                                    ^^^^^^ not found in this scope
+
+error[E0573]: expected type, found function `stat`
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:829:43
+    |
+829 |     pub fn fstat(fildes: c_int, buf: *mut stat) -> c_int;
+    |                                           ^^^^ not a type
+
+error[E0412]: cannot find type `mode_t` in this scope
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:831:45
+    |
+831 |     pub fn mkdir(path: *const c_char, mode: mode_t) -> c_int;
+    |                                             ^^^^^^ not found in this scope
+
+error[E0573]: expected type, found function `stat`
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:842:48
+    |
+842 |     pub fn stat(path: *const c_char, buf: *mut stat) -> c_int;
+    |                                                ^^^^ not a type
+
+error[E0412]: cannot find type `mode_t` in this scope
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:861:45
+    |
+861 |     pub fn creat(path: *const c_char, mode: mode_t) -> c_int;
+    |                                             ^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `dirent` in the crate root
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:888:58
+    |
+888 |     pub fn readdir(dirp: *mut crate::DIR) -> *mut crate::dirent;
+    |                                                          ^^^^^^ not found in the crate root
+
+error[E0412]: cannot find type `mode_t` in the crate root
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:907:22
+    |
+907 |         mode: crate::mode_t,
+    |                      ^^^^^^ not found in the crate root
+
+error[E0573]: expected type, found function `stat`
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:926:69
+    |
+926 |     pub fn fstatat(dirfd: c_int, pathname: *const c_char, buf: *mut stat, flags: c_int) -> c_int;
+    |                                                                     ^^^^ not a type
+
+error[E0412]: cannot find type `off_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1000:37
+     |
+1000 |     pub fn lseek(fd: c_int, offset: off_t, whence: c_int) -> off_t;
+     |                                     ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `off_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1000:62
+     |
+1000 |     pub fn lseek(fd: c_int, offset: off_t, whence: c_int) -> off_t;
+     |                                                              ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `off_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1062:70
+     |
+1062 |     pub fn pread(fd: c_int, buf: *mut c_void, count: size_t, offset: off_t) -> ssize_t;
+     |                                                                      ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `off_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1067:73
+     |
+1067 |     pub fn pwrite(fd: c_int, buf: *const c_void, count: size_t, offset: off_t) -> ssize_t;
+     |                                                                         ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `mode_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1068:24
+     |
+1068 |     pub fn umask(mask: mode_t) -> mode_t;
+     |                        ^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `mode_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1068:35
+     |
+1068 |     pub fn umask(mask: mode_t) -> mode_t;
+     |                                   ^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `off_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1099:17
+     |
+1099 |         offset: off_t,
+     |                 ^^^^^ not found in this scope
+
+error[E0573]: expected type, found function `stat`
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1119:49
+     |
+1119 |     pub fn lstat(path: *const c_char, buf: *mut stat) -> c_int;
+     |                                                 ^^^^ not a type
+
+error[E0412]: cannot find type `off_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1141:50
+     |
+1141 |     pub fn truncate(path: *const c_char, length: off_t) -> c_int;
+     |                                                  ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `off_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1142:41
+     |
+1142 |     pub fn ftruncate(fd: c_int, length: off_t) -> c_int;
+     |                                         ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `clock_t` in the crate root
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1162:50
+     |
+1162 |     pub fn times(buf: *mut crate::tms) -> crate::clock_t;
+     |                                                  ^^^^^^^ not found in the crate root
+
+error[E0412]: cannot find type `pthread_t` in the crate root
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1164:37
+     |
+1164 |     pub fn pthread_self() -> crate::pthread_t;
+     |                                     ^^^^^^^^^ not found in the crate root
+
+error[E0412]: cannot find type `pthread_t` in the crate root
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1165:37
+     |
+1165 |     pub fn pthread_equal(t1: crate::pthread_t, t2: crate::pthread_t) -> c_int;
+     |                                     ^^^^^^^^^ not found in the crate root
+
+error[E0412]: cannot find type `pthread_t` in the crate root
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1165:59
+     |
+1165 |     pub fn pthread_equal(t1: crate::pthread_t, t2: crate::pthread_t) -> c_int;
+     |                                                           ^^^^^^^^^ not found in the crate root
+
+error[E0412]: cannot find type `pthread_t` in the crate root
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1170:40
+     |
+1170 |     pub fn pthread_join(native: crate::pthread_t, value: *mut *mut c_void) -> c_int;
+     |                                        ^^^^^^^^^ not found in the crate root
+
+error[E0412]: cannot find type `pthread_attr_t` in the crate root
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1172:48
+     |
+1172 |     pub fn pthread_attr_init(attr: *mut crate::pthread_attr_t) -> c_int;
+     |                                                ^^^^^^^^^^^^^^ not found in the crate root
+
+error[E0412]: cannot find type `pthread_attr_t` in the crate root
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1173:51
+     |
+1173 |     pub fn pthread_attr_destroy(attr: *mut crate::pthread_attr_t) -> c_int;
+     |                                                   ^^^^^^^^^^^^^^ not found in the crate root
+
+error[E0412]: cannot find type `pthread_attr_t` in the crate root
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1175:29
+     |
+1175 |         attr: *const crate::pthread_attr_t,
+     |                             ^^^^^^^^^^^^^^ not found in the crate root
+
+error[E0412]: cannot find type `pthread_attr_t` in the crate root
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1178:56
+     |
+1178 |     pub fn pthread_attr_setstacksize(attr: *mut crate::pthread_attr_t, stack_size: size_t)
+     |                                                        ^^^^^^^^^^^^^^ not found in the crate root
+
+error[E0412]: cannot find type `pthread_attr_t` in the crate root
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1180:58
+     |
+1180 |     pub fn pthread_attr_setdetachstate(attr: *mut crate::pthread_attr_t, state: c_int) -> c_int;
+     |                                                          ^^^^^^^^^^^^^^ not found in the crate root
+
+error[E0412]: cannot find type `pthread_t` in the crate root
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1181:42
+     |
+1181 |     pub fn pthread_detach(thread: crate::pthread_t) -> c_int;
+     |                                          ^^^^^^^^^ not found in the crate root
+
+error[E0412]: cannot find type `pthread_key_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1185:19
+     |
+1185 |         key: *mut pthread_key_t,
+     |                   ^^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `pthread_key_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1188:36
+     |
+1188 |     pub fn pthread_key_delete(key: pthread_key_t) -> c_int;
+     |                                    ^^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `pthread_key_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1189:37
+     |
+1189 |     pub fn pthread_getspecific(key: pthread_key_t) -> *mut c_void;
+     |                                     ^^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `pthread_key_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1190:37
+     |
+1190 |     pub fn pthread_setspecific(key: pthread_key_t, value: *const c_void) -> c_int;
+     |                                     ^^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `pthread_mutex_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1192:20
+     |
+1192 |         lock: *mut pthread_mutex_t,
+     |                    ^^^^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `pthread_mutexattr_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1193:22
+     |
+1193 |         attr: *const pthread_mutexattr_t,
+     |                      ^^^^^^^^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `pthread_mutex_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1195:45
+     |
+1195 |     pub fn pthread_mutex_destroy(lock: *mut pthread_mutex_t) -> c_int;
+     |                                             ^^^^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `pthread_mutex_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1196:42
+     |
+1196 |     pub fn pthread_mutex_lock(lock: *mut pthread_mutex_t) -> c_int;
+     |                                          ^^^^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `pthread_mutex_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1197:45
+     |
+1197 |     pub fn pthread_mutex_trylock(lock: *mut pthread_mutex_t) -> c_int;
+     |                                             ^^^^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `pthread_mutex_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1198:44
+     |
+1198 |     pub fn pthread_mutex_unlock(lock: *mut pthread_mutex_t) -> c_int;
+     |                                            ^^^^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `pthread_mutexattr_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1200:46
+     |
+1200 |     pub fn pthread_mutexattr_init(attr: *mut pthread_mutexattr_t) -> c_int;
+     |                                              ^^^^^^^^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `pthread_mutexattr_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1205:49
+     |
+1205 |     pub fn pthread_mutexattr_destroy(attr: *mut pthread_mutexattr_t) -> c_int;
+     |                                                 ^^^^^^^^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `pthread_mutexattr_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1206:49
+     |
+1206 |     pub fn pthread_mutexattr_settype(attr: *mut pthread_mutexattr_t, _type: c_int) -> c_int;
+     |                                                 ^^^^^^^^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `pthread_cond_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1212:41
+     |
+1212 |     pub fn pthread_cond_init(cond: *mut pthread_cond_t, attr: *const pthread_condattr_t) -> c_int;
+     |                                         ^^^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `pthread_condattr_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1212:70
+     |
+1212 |     pub fn pthread_cond_init(cond: *mut pthread_cond_t, attr: *const pthread_condattr_t) -> c_int;
+     |                                                                      ^^^^^^^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `pthread_cond_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1217:41
+     |
+1217 |     pub fn pthread_cond_wait(cond: *mut pthread_cond_t, lock: *mut pthread_mutex_t) -> c_int;
+     |                                         ^^^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `pthread_mutex_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1217:68
+     |
+1217 |     pub fn pthread_cond_wait(cond: *mut pthread_cond_t, lock: *mut pthread_mutex_t) -> c_int;
+     |                                                                    ^^^^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `pthread_cond_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1223:20
+     |
+1223 |         cond: *mut pthread_cond_t,
+     |                    ^^^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `pthread_mutex_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1224:20
+     |
+1224 |         lock: *mut pthread_mutex_t,
+     |                    ^^^^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `pthread_cond_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1227:43
+     |
+1227 |     pub fn pthread_cond_signal(cond: *mut pthread_cond_t) -> c_int;
+     |                                           ^^^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `pthread_cond_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1228:46
+     |
+1228 |     pub fn pthread_cond_broadcast(cond: *mut pthread_cond_t) -> c_int;
+     |                                              ^^^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `pthread_cond_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1229:44
+     |
+1229 |     pub fn pthread_cond_destroy(cond: *mut pthread_cond_t) -> c_int;
+     |                                            ^^^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `pthread_condattr_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1230:45
+     |
+1230 |     pub fn pthread_condattr_init(attr: *mut pthread_condattr_t) -> c_int;
+     |                                             ^^^^^^^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `pthread_condattr_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1231:48
+     |
+1231 |     pub fn pthread_condattr_destroy(attr: *mut pthread_condattr_t) -> c_int;
+     |                                                ^^^^^^^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `pthread_rwlock_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1237:20
+     |
+1237 |         lock: *mut pthread_rwlock_t,
+     |                    ^^^^^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `pthread_rwlockattr_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1238:22
+     |
+1238 |         attr: *const pthread_rwlockattr_t,
+     |                      ^^^^^^^^^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `pthread_rwlock_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1244:46
+     |
+1244 |     pub fn pthread_rwlock_destroy(lock: *mut pthread_rwlock_t) -> c_int;
+     |                                              ^^^^^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `pthread_rwlock_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1249:45
+     |
+1249 |     pub fn pthread_rwlock_rdlock(lock: *mut pthread_rwlock_t) -> c_int;
+     |                                             ^^^^^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `pthread_rwlock_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1254:48
+     |
+1254 |     pub fn pthread_rwlock_tryrdlock(lock: *mut pthread_rwlock_t) -> c_int;
+     |                                                ^^^^^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `pthread_rwlock_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1259:45
+     |
+1259 |     pub fn pthread_rwlock_wrlock(lock: *mut pthread_rwlock_t) -> c_int;
+     |                                             ^^^^^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `pthread_rwlock_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1264:48
+     |
+1264 |     pub fn pthread_rwlock_trywrlock(lock: *mut pthread_rwlock_t) -> c_int;
+     |                                                ^^^^^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `pthread_rwlock_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1269:45
+     |
+1269 |     pub fn pthread_rwlock_unlock(lock: *mut pthread_rwlock_t) -> c_int;
+     |                                             ^^^^^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `pthread_rwlockattr_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1270:47
+     |
+1270 |     pub fn pthread_rwlockattr_init(attr: *mut pthread_rwlockattr_t) -> c_int;
+     |                                               ^^^^^^^^^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `pthread_rwlockattr_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1271:50
+     |
+1271 |     pub fn pthread_rwlockattr_destroy(attr: *mut pthread_rwlockattr_t) -> c_int;
+     |                                                  ^^^^^^^^^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `socklen_t` in the crate root
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1283:29
+     |
+44   | pub type locale_t = *mut c_void;
+     | -------------------------------- similarly named type alias `locale_t` defined here
+...
+1283 |         optlen: *mut crate::socklen_t,
+     |                             ^^^^^^^^^ help: a type alias with a similar name exists: `locale_t`
+
+error[E0412]: cannot find type `addrinfo` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1303:23
+     |
+1303 |         hints: *const addrinfo,
+     |                       ^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `addrinfo` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1304:24
+     |
+1304 |         res: *mut *mut addrinfo,
+     |                        ^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `addrinfo` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1308:35
+     |
+1308 |     pub fn freeaddrinfo(res: *mut addrinfo);
+     |                                   ^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `time_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1339:36
+     |
+11   | pub type size_t = usize;
+     | ------------------------ similarly named type alias `size_t` defined here
+...
+1339 |     pub fn gmtime_r(time_p: *const time_t, result: *mut tm) -> *mut tm;
+     |                                    ^^^^^^ help: a type alias with a similar name exists: `size_t`
+
+error[E0412]: cannot find type `tm` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1339:57
+     |
+1339 |     pub fn gmtime_r(time_p: *const time_t, result: *mut tm) -> *mut tm;
+     |                                                         ^^ help: a struct with a similar name exists: `tms`
+     |
+    ::: /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/macros.rs:118:13
+     |
+118  |             pub struct $i { $($field)* }
+     |             ------------- similarly named struct `tms` defined here
+
+error[E0412]: cannot find type `tm` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1339:69
+     |
+1339 |     pub fn gmtime_r(time_p: *const time_t, result: *mut tm) -> *mut tm;
+     |                                                                     ^^ help: a struct with a similar name exists: `tms`
+     |
+    ::: /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/macros.rs:118:13
+     |
+118  |             pub struct $i { $($field)* }
+     |             ------------- similarly named struct `tms` defined here
+
+error[E0412]: cannot find type `time_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1343:39
+     |
+11   | pub type size_t = usize;
+     | ------------------------ similarly named type alias `size_t` defined here
+...
+1343 |     pub fn localtime_r(time_p: *const time_t, result: *mut tm) -> *mut tm;
+     |                                       ^^^^^^ help: a type alias with a similar name exists: `size_t`
+
+error[E0412]: cannot find type `tm` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1343:60
+     |
+1343 |     pub fn localtime_r(time_p: *const time_t, result: *mut tm) -> *mut tm;
+     |                                                            ^^ help: a struct with a similar name exists: `tms`
+     |
+    ::: /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/macros.rs:118:13
+     |
+118  |             pub struct $i { $($field)* }
+     |             ------------- similarly named struct `tms` defined here
+
+error[E0412]: cannot find type `tm` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1343:72
+     |
+1343 |     pub fn localtime_r(time_p: *const time_t, result: *mut tm) -> *mut tm;
+     |                                                                        ^^ help: a struct with a similar name exists: `tms`
+     |
+    ::: /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/macros.rs:118:13
+     |
+118  |             pub struct $i { $($field)* }
+     |             ------------- similarly named struct `tms` defined here
+
+error[E0412]: cannot find type `tm` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1351:28
+     |
+1351 |     pub fn mktime(tm: *mut tm) -> time_t;
+     |                            ^^ help: a struct with a similar name exists: `tms`
+     |
+    ::: /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/macros.rs:118:13
+     |
+118  |             pub struct $i { $($field)* }
+     |             ------------- similarly named struct `tms` defined here
+
+error[E0412]: cannot find type `time_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1351:35
+     |
+11   | pub type size_t = usize;
+     | ------------------------ similarly named type alias `size_t` defined here
+...
+1351 |     pub fn mktime(tm: *mut tm) -> time_t;
+     |                                   ^^^^^^ help: a type alias with a similar name exists: `size_t`
+
+error[E0412]: cannot find type `time_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1355:28
+     |
+11   | pub type size_t = usize;
+     | ------------------------ similarly named type alias `size_t` defined here
+...
+1355 |     pub fn time(time: *mut time_t) -> time_t;
+     |                            ^^^^^^ help: a type alias with a similar name exists: `size_t`
+
+error[E0412]: cannot find type `time_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1355:39
+     |
+11   | pub type size_t = usize;
+     | ------------------------ similarly named type alias `size_t` defined here
+...
+1355 |     pub fn time(time: *mut time_t) -> time_t;
+     |                                       ^^^^^^ help: a type alias with a similar name exists: `size_t`
+
+error[E0412]: cannot find type `time_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1359:34
+     |
+11   | pub type size_t = usize;
+     | ------------------------ similarly named type alias `size_t` defined here
+...
+1359 |     pub fn gmtime(time_p: *const time_t) -> *mut tm;
+     |                                  ^^^^^^ help: a type alias with a similar name exists: `size_t`
+
+error[E0412]: cannot find type `tm` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1359:50
+     |
+1359 |     pub fn gmtime(time_p: *const time_t) -> *mut tm;
+     |                                                  ^^ help: a struct with a similar name exists: `tms`
+     |
+    ::: /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/macros.rs:118:13
+     |
+118  |             pub struct $i { $($field)* }
+     |             ------------- similarly named struct `tms` defined here
+
+error[E0412]: cannot find type `time_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1363:37
+     |
+11   | pub type size_t = usize;
+     | ------------------------ similarly named type alias `size_t` defined here
+...
+1363 |     pub fn localtime(time_p: *const time_t) -> *mut tm;
+     |                                     ^^^^^^ help: a type alias with a similar name exists: `size_t`
+
+error[E0412]: cannot find type `tm` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1363:53
+     |
+1363 |     pub fn localtime(time_p: *const time_t) -> *mut tm;
+     |                                                     ^^ help: a struct with a similar name exists: `tms`
+     |
+    ::: /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/macros.rs:118:13
+     |
+118  |             pub struct $i { $($field)* }
+     |             ------------- similarly named struct `tms` defined here
+
+error[E0412]: cannot find type `time_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1367:28
+     |
+11   | pub type size_t = usize;
+     | ------------------------ similarly named type alias `size_t` defined here
+...
+1367 |     pub fn difftime(time1: time_t, time0: time_t) -> c_double;
+     |                            ^^^^^^ help: a type alias with a similar name exists: `size_t`
+
+error[E0412]: cannot find type `time_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1367:43
+     |
+11   | pub type size_t = usize;
+     | ------------------------ similarly named type alias `size_t` defined here
+...
+1367 |     pub fn difftime(time1: time_t, time0: time_t) -> c_double;
+     |                                           ^^^^^^ help: a type alias with a similar name exists: `size_t`
+
+error[E0412]: cannot find type `tm` in the crate root
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1371:35
+     |
+1371 |     pub fn timegm(tm: *mut crate::tm) -> time_t;
+     |                                   ^^ help: a struct with a similar name exists: `tms`
+     |
+    ::: /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/macros.rs:118:13
+     |
+118  |             pub struct $i { $($field)* }
+     |             ------------- similarly named struct `tms` defined here
+
+error[E0412]: cannot find type `time_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1371:42
+     |
+11   | pub type size_t = usize;
+     | ------------------------ similarly named type alias `size_t` defined here
+...
+1371 |     pub fn timegm(tm: *mut crate::tm) -> time_t;
+     |                                          ^^^^^^ help: a type alias with a similar name exists: `size_t`
+
+error[E0412]: cannot find type `mode_t` in the crate root
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1378:56
+     |
+1378 |     pub fn mknod(pathname: *const c_char, mode: crate::mode_t, dev: crate::dev_t) -> c_int;
+     |                                                        ^^^^^^ not found in the crate root
+
+error[E0412]: cannot find type `dev_t` in the crate root
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1378:76
+     |
+1378 |     pub fn mknod(pathname: *const c_char, mode: crate::mode_t, dev: crate::dev_t) -> c_int;
+     |                                                                            ^^^^^ not found in the crate root
+
+error[E0412]: cannot find type `nfds_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1418:41
+     |
+1418 |     pub fn poll(fds: *mut pollfd, nfds: nfds_t, timeout: c_int) -> c_int;
+     |                                         ^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `fd_set` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1430:23
+     |
+1430 |         readfds: *mut fd_set,
+     |                       ^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `fd_set` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1431:24
+     |
+1431 |         writefds: *mut fd_set,
+     |                        ^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `fd_set` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1432:24
+     |
+1432 |         errorfds: *mut fd_set,
+     |                        ^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `lconv` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1437:33
+     |
+1437 |     pub fn localeconv() -> *mut lconv;
+     |                                 ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `sem_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1443:31
+     |
+1443 |     pub fn sem_wait(sem: *mut sem_t) -> c_int;
+     |                               ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `sem_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1444:34
+     |
+1444 |     pub fn sem_trywait(sem: *mut sem_t) -> c_int;
+     |                                  ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `sem_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1445:31
+     |
+1445 |     pub fn sem_post(sem: *mut sem_t) -> c_int;
+     |                               ^^^^^ not found in this scope
+
+error[E0573]: expected type, found function `statvfs`
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1446:51
+     |
+1446 |     pub fn statvfs(path: *const c_char, buf: *mut statvfs) -> c_int;
+     |                                                   ^^^^^^^ not a type
+
+error[E0573]: expected type, found function `statvfs`
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1447:42
+     |
+1447 |     pub fn fstatvfs(fd: c_int, buf: *mut statvfs) -> c_int;
+     |                                          ^^^^^^^ not a type
+
+error[E0412]: cannot find type `sigset_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1450:34
+     |
+1450 |     pub fn sigemptyset(set: *mut sigset_t) -> c_int;
+     |                                  ^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `sigset_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1452:32
+     |
+1452 |     pub fn sigaddset(set: *mut sigset_t, signum: c_int) -> c_int;
+     |                                ^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `sigset_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1454:33
+     |
+1454 |     pub fn sigfillset(set: *mut sigset_t) -> c_int;
+     |                                 ^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `sigset_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1456:32
+     |
+1456 |     pub fn sigdelset(set: *mut sigset_t, signum: c_int) -> c_int;
+     |                                ^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `sigset_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1458:36
+     |
+1458 |     pub fn sigismember(set: *const sigset_t, signum: c_int) -> c_int;
+     |                                    ^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `sigset_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1461:48
+     |
+1461 |     pub fn sigprocmask(how: c_int, set: *const sigset_t, oldset: *mut sigset_t) -> c_int;
+     |                                                ^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `sigset_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1461:71
+     |
+1461 |     pub fn sigprocmask(how: c_int, set: *const sigset_t, oldset: *mut sigset_t) -> c_int;
+     |                                                                       ^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `sigset_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1463:33
+     |
+1463 |     pub fn sigpending(set: *mut sigset_t) -> c_int;
+     |                                 ^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `mode_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1468:46
+     |
+1468 |     pub fn mkfifo(path: *const c_char, mode: mode_t) -> c_int;
+     |                                              ^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `off_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1470:53
+     |
+1470 |     pub fn fseeko(stream: *mut crate::FILE, offset: off_t, whence: c_int) -> c_int;
+     |                                                     ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `off_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1471:48
+     |
+1471 |     pub fn ftello(stream: *mut crate::FILE) -> off_t;
+     |                                                ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `termios` in the crate root
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1477:47
+     |
+1477 |     pub fn cfgetispeed(termios: *const crate::termios) -> crate::speed_t;
+     |                                               ^^^^^^^ not found in the crate root
+
+error[E0412]: cannot find type `speed_t` in the crate root
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1477:66
+     |
+1477 |     pub fn cfgetispeed(termios: *const crate::termios) -> crate::speed_t;
+     |                                                                  ^^^^^^^ not found in the crate root
+
+error[E0412]: cannot find type `termios` in the crate root
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1478:47
+     |
+1478 |     pub fn cfgetospeed(termios: *const crate::termios) -> crate::speed_t;
+     |                                               ^^^^^^^ not found in the crate root
+
+error[E0412]: cannot find type `speed_t` in the crate root
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1478:66
+     |
+1478 |     pub fn cfgetospeed(termios: *const crate::termios) -> crate::speed_t;
+     |                                                                  ^^^^^^^ not found in the crate root
+
+error[E0412]: cannot find type `termios` in the crate root
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1479:45
+     |
+1479 |     pub fn cfsetispeed(termios: *mut crate::termios, speed: crate::speed_t) -> c_int;
+     |                                             ^^^^^^^ not found in the crate root
+
+error[E0412]: cannot find type `speed_t` in the crate root
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1479:68
+     |
+1479 |     pub fn cfsetispeed(termios: *mut crate::termios, speed: crate::speed_t) -> c_int;
+     |                                                                    ^^^^^^^ not found in the crate root
+
+error[E0412]: cannot find type `termios` in the crate root
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1480:45
+     |
+1480 |     pub fn cfsetospeed(termios: *mut crate::termios, speed: crate::speed_t) -> c_int;
+     |                                             ^^^^^^^ not found in the crate root
+
+error[E0412]: cannot find type `speed_t` in the crate root
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1480:68
+     |
+1480 |     pub fn cfsetospeed(termios: *mut crate::termios, speed: crate::speed_t) -> c_int;
+     |                                                                    ^^^^^^^ not found in the crate root
+
+error[E0412]: cannot find type `termios` in the crate root
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1481:54
+     |
+1481 |     pub fn tcgetattr(fd: c_int, termios: *mut crate::termios) -> c_int;
+     |                                                      ^^^^^^^ not found in the crate root
+
+error[E0412]: cannot find type `termios` in the crate root
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1482:81
+     |
+1482 |     pub fn tcsetattr(fd: c_int, optional_actions: c_int, termios: *const crate::termios) -> c_int;
+     |                                                                                 ^^^^^^^ not found in the crate root
+
+error[E0412]: cannot find type `off_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1511:46
+     |
+1511 |     pub fn lockf(fd: c_int, cmd: c_int, len: off_t) -> c_int;
+     |                                              ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `Dl_info` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1579:59
+     |
+1579 |             pub fn dladdr(addr: *const c_void, info: *mut Dl_info) -> c_int;
+     |                                                           ^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `wchar_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1595:51
+     |
+1595 |             pub fn open_wmemstream(ptr: *mut *mut wchar_t, sizeloc: *mut size_t) -> *mut FILE;
+     |                                                   ^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `mode_t` in the crate root
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1610:80
+     |
+1610 |             pub fn mkdirat(dirfd: c_int, pathname: *const c_char, mode: crate::mode_t) -> c_int;
+     |                                                                                ^^^^^^ not found in the crate root
+
+error[E0412]: cannot find type `dirent` in the crate root
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1641:36
+     |
+1641 |                 entry: *mut crate::dirent,
+     |                                    ^^^^^^ not found in the crate root
+
+error[E0412]: cannot find type `dirent` in the crate root
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1642:42
+     |
+1642 |                 result: *mut *mut crate::dirent,
+     |                                          ^^^^^^ not found in the crate root
+
+error[E0573]: expected type, found function `sigaction`
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1681:57
+     |
+1681 |             pub fn sigaction(signum: c_int, act: *const sigaction, oldact: *mut sigaction)
+     |                                                         ^^^^^^^^^ not a type
+
+error[E0573]: expected type, found function `sigaction`
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1681:81
+     |
+1681 |             pub fn sigaction(signum: c_int, act: *const sigaction, oldact: *mut sigaction)
+     |                                                                                 ^^^^^^^^^ not a type
+
+error[E0412]: cannot find type `fd_set` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1695:31
+     |
+1695 |                 readfds: *mut fd_set,
+     |                               ^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `fd_set` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1696:32
+     |
+1696 |                 writefds: *mut fd_set,
+     |                                ^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `fd_set` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1697:32
+     |
+1697 |                 errorfds: *mut fd_set,
+     |                                ^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `sigset_t` in this scope
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1699:33
+     |
+1699 |                 sigmask: *const sigset_t,
+     |                                 ^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `termios` in the crate root
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1712:51
+     |
+1712 |             pub fn cfmakeraw(termios: *mut crate::termios);
+     |                                                   ^^^^^^^ not found in the crate root
+
+error[E0412]: cannot find type `termios` in the crate root
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1713:52
+     |
+1713 |             pub fn cfsetspeed(termios: *mut crate::termios, speed: crate::speed_t) -> c_int;
+     |                                                    ^^^^^^^ not found in the crate root
+
+error[E0412]: cannot find type `speed_t` in the crate root
+    --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/unix/mod.rs:1713:75
+     |
+1713 |             pub fn cfsetspeed(termios: *mut crate::termios, speed: crate::speed_t) -> c_int;
+     |                                                                           ^^^^^^^ not found in the crate root
+
+Some errors have detailed explanations: E0412, E0573.
+For more information about an error, try `rustc --explain E0412`.
+error: could not compile `libc` (lib) due to 171 previous errors
+
+Caused by:
+  process didn't exit successfully: `CARGO=/home/danbugs/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin/cargo CARGO_CRATE_NAME=libc CARGO_MANIFEST_DIR=/home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171 CARGO_MANIFEST_PATH=/home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/Cargo.toml CARGO_PKG_AUTHORS='The Rust Project Developers' CARGO_PKG_DESCRIPTION='Raw FFI bindings to platform libraries like libc.
+  ' CARGO_PKG_HOMEPAGE='https://github.com/rust-lang/libc' CARGO_PKG_LICENSE='MIT OR Apache-2.0' CARGO_PKG_LICENSE_FILE='' CARGO_PKG_NAME=libc CARGO_PKG_README=README.md CARGO_PKG_REPOSITORY='https://github.com/rust-lang/libc' CARGO_PKG_RUST_VERSION=1.63 CARGO_PKG_VERSION=0.2.171 CARGO_PKG_VERSION_MAJOR=0 CARGO_PKG_VERSION_MINOR=2 CARGO_PKG_VERSION_PATCH=171 CARGO_PKG_VERSION_PRE='' LD_LIBRARY_PATH='/home/danbugs/repos/deno_core/target/debug/deps:/home/danbugs/.rustup/toolchains/nanvix-x86-nightly/lib' OUT_DIR=/home/danbugs/repos/deno_core/target/i686-unknown-nanvix/debug/build/libc-a8a6b5e9270cf140/out /home/danbugs/.rustup/toolchains/nanvix-x86-nightly/bin/rustc --crate-name libc --edition=2021 /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.171/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --cfg 'feature="default"' --cfg 'feature="std"' --check-cfg 'cfg(docsrs,test)' --check-cfg 'cfg(feature, values("align", "const-extern-fn", "default", "extra_traits", "rustc-dep-of-std", "rustc-std-workspace-core", "std", "use_std"))' -C metadata=bf962e6fc8c356b3 -C extra-filename=-ee04305dbc831244 --out-dir /home/danbugs/repos/deno_core/target/i686-unknown-nanvix/debug/deps --target i686-unknown-nanvix -L dependency=/home/danbugs/repos/deno_core/target/i686-unknown-nanvix/debug/deps -L dependency=/home/danbugs/repos/deno_core/target/debug/deps --cap-lints warn -C target-cpu=i686 -C relocation-model=static -C link-arg=/tmp/nanvix_deno_core_stubs.o -C link-arg=-T/home/danbugs/repos/nanvix/build/user/linker/x86/user.ld -C link-arg=-L/home/danbugs/repos/nanvix-toolchain-v09x-copy//lib/i686-unknown-nanvix/ -C link-arg=-lc++ -C link-arg=-lc++abi -C link-arg=-L/home/danbugs/repos/nanvix-toolchain-v09x-copy//i686-nanvix/lib/ -C link-arg=-lc -C link-arg=-lm -C link-arg=-L/home/danbugs/repos/nanvix-toolchain-v09x-copy//lib/clang/21/lib/i386-unknown-nanvix/ -C link-arg=-lclang_rt.builtins --cfg freebsd11 --cfg libc_const_extern_fn --check-cfg 'cfg(emscripten_old_stat_abi)' --check-cfg 'cfg(espidf_time32)' --check-cfg 'cfg(freebsd10)' --check-cfg 'cfg(freebsd11)' --check-cfg 'cfg(freebsd12)' --check-cfg 'cfg(freebsd13)' --check-cfg 'cfg(freebsd14)' --check-cfg 'cfg(freebsd15)' --check-cfg 'cfg(libc_const_extern_fn)' --check-cfg 'cfg(libc_deny_warnings)' --check-cfg 'cfg(libc_thread_local)' --check-cfg 'cfg(libc_ctest)' --check-cfg 'cfg(linux_time_bits64)' --check-cfg 'cfg(target_os,values("switch","aix","ohos","hurd","rtems","visionos","nuttx","cygwin"))' --check-cfg 'cfg(target_env,values("illumos","wasi","aix","ohos"))' --check-cfg 'cfg(target_arch,values("loongarch64","mips32r6","mips64r6","csky"))'` (exit status: 1)
+warning: build failed, waiting for other jobs to finish...

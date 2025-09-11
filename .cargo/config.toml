@@ -1,0 +1,6 @@
+[patch.crates-io]
+libc = { git = "https://github.com/nanvix/libc", rev = "87fbecbfbe5d870f007dbf77dd46c17197b29384" }
+libloading = { git = "https://github.com/nanvix/rust_libloading", branch = "nanvix/v0.8.8" }
+errno = { git = "https://github.com/nanvix/rust-errno", branch = "nanvix/v0.3.13" }
+fslock = { git = "https://github.com/nanvix/fslock", branch = "nanvix/v0.2.1" }
+clang-sys = { git = "https://github.com/nanvix/clang-sys", rev = "ee92b8a58fa3031b4fd34bf2e15906f016984263" }

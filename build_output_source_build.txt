@@ -1,0 +1,461 @@
+error[E0433]: failed to resolve: could not find `UnsafePtr` in `cppgc`
+  --> core/cppgc.rs:64:35
+   |
+64 |     let ptr = unsafe { v8::cppgc::UnsafePtr::new(&self.member)? };
+   |                                   ^^^^^^^^^ could not find `UnsafePtr` in `cppgc`
+
+error[E0412]: cannot find type `UnsafePtr` in module `v8::cppgc`
+  --> core/cppgc.rs:63:26
+   |
+63 |   ) -> Option<v8::cppgc::UnsafePtr<CppGcObject<T>>> {
+   |                          ^^^^^^^^^ not found in `v8::cppgc`
+
+error[E0412]: cannot find type `UnsafePtr` in module `v8::cppgc`
+  --> core/cppgc.rs:70:22
+   |
+70 |           v8::cppgc::UnsafePtr<CppGcObject<DummyT>>,
+   |                      ^^^^^^^^^ not found in `v8::cppgc`
+
+error[E0412]: cannot find type `UnsafePtr` in module `v8::cppgc`
+  --> core/cppgc.rs:71:22
+   |
+71 |           v8::cppgc::UnsafePtr<CppGcObject<T>>,
+   |                      ^^^^^^^^^ not found in `v8::cppgc`
+
+error[E0412]: cannot find type `UnsafePtr` in module `v8::cppgc`
+  --> core/cppgc.rs:80:43
+   |
+80 | impl<T: GarbageCollected> From<v8::cppgc::UnsafePtr<CppGcObject<T>>>
+   |                                           ^^^^^^^^^ not found in `v8::cppgc`
+
+error[E0412]: cannot find type `UnsafePtr` in module `v8::cppgc`
+  --> core/cppgc.rs:83:27
+   |
+83 |   fn from(ptr: v8::cppgc::UnsafePtr<CppGcObject<T>>) -> Self {
+   |                           ^^^^^^^^^ not found in `v8::cppgc`
+
+error[E0412]: cannot find type `UnsafePtr` in module `v8::cppgc`
+   --> core/cppgc.rs:355:21
+    |
+355 |   inner: v8::cppgc::UnsafePtr<CppGcObject<T>>,
+    |                     ^^^^^^^^^ not found in `v8::cppgc`
+
+error[E0658]: `let` expressions in this position are unstable
+   --> core/error.rs:756:12
+    |
+756 |           if let (Some(file_name), Some(line_number)) =
+    |  ____________^
+757 | |           (&frame.file_name, frame.line_number)
+    | |_______________________________________________^
+    |
+    = note: see issue #53667 <https://github.com/rust-lang/rust/issues/53667> for more information
+    = help: add `#![feature(let_chains)]` to the crate attributes to enable
+    = note: this compiler was built on 2025-09-15; consider upgrading it if it is out of date
+
+error[E0658]: `let` expressions in this position are unstable
+   --> core/error.rs:801:10
+    |
+801 |       if let Some(formatted) = formatted
+    |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = note: see issue #53667 <https://github.com/rust-lang/rust/issues/53667> for more information
+    = help: add `#![feature(let_chains)]` to the crate attributes to enable
+    = note: this compiler was built on 2025-09-15; consider upgrading it if it is out of date
+
+error[E0658]: `let` expressions in this position are unstable
+   --> core/error.rs:894:12
+    |
+894 |         && let Some(stack_frame) = JsStackFrame::from_v8_message(scope, msg)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = note: see issue #53667 <https://github.com/rust-lang/rust/issues/53667> for more information
+    = help: add `#![feature(let_chains)]` to the crate attributes to enable
+    = note: this compiler was built on 2025-09-15; consider upgrading it if it is out of date
+
+error[E0658]: `let` expressions in this position are unstable
+   --> core/error.rs:902:14
+    |
+902 |             if let (Some(file_name), Some(line_number)) =
+    |  ______________^
+903 | |             (&frame.file_name, frame.line_number)
+    | |_________________________________________________^
+    |
+    = note: see issue #53667 <https://github.com/rust-lang/rust/issues/53667> for more information
+    = help: add `#![feature(let_chains)]` to the crate attributes to enable
+    = note: this compiler was built on 2025-09-15; consider upgrading it if it is out of date
+
+error[E0658]: `let` expressions in this position are unstable
+   --> core/error.rs:921:12
+    |
+921 |         if let Some(errors) = aggregated_errors
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = note: see issue #53667 <https://github.com/rust-lang/rust/issues/53667> for more information
+    = help: add `#![feature(let_chains)]` to the crate attributes to enable
+    = note: this compiler was built on 2025-09-15; consider upgrading it if it is out of date
+
+error[E0658]: `let` expressions in this position are unstable
+    --> core/error.rs:1103:6
+     |
+1103 |   if let Some(frames_v8) = frames_v8
+     |      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     |
+     = note: see issue #53667 <https://github.com/rust-lang/rust/issues/53667> for more information
+     = help: add `#![feature(let_chains)]` to the crate attributes to enable
+     = note: this compiler was built on 2025-09-15; consider upgrading it if it is out of date
+
+error[E0658]: `let` expressions in this position are unstable
+    --> core/error.rs:1406:8
+     |
+1406 |     if let Some(info) = callsite.get_private(scope, key)
+     |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     |
+     = note: see issue #53667 <https://github.com/rust-lang/rust/issues/53667> for more information
+     = help: add `#![feature(let_chains)]` to the crate attributes to enable
+     = note: this compiler was built on 2025-09-15; consider upgrading it if it is out of date
+
+error[E0658]: `let` expressions in this position are unstable
+    --> core/error.rs:1407:10
+     |
+1407 |       && let Ok(array) = info.try_cast::<v8::Array>()
+     |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     |
+     = note: see issue #53667 <https://github.com/rust-lang/rust/issues/53667> for more information
+     = help: add `#![feature(let_chains)]` to the crate attributes to enable
+     = note: this compiler was built on 2025-09-15; consider upgrading it if it is out of date
+
+error[E0658]: `let` expressions in this position are unstable
+    --> core/error.rs:1904:10
+     |
+1904 |       if let Some(type_name) = &frame.type_name
+     |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     |
+     = note: see issue #53667 <https://github.com/rust-lang/rust/issues/53667> for more information
+     = help: add `#![feature(let_chains)]` to the crate attributes to enable
+     = note: this compiler was built on 2025-09-15; consider upgrading it if it is out of date
+
+error[E0658]: `let` expressions in this position are unstable
+    --> core/error.rs:1910:10
+     |
+1910 |       if let Some(method_name) = &frame.method_name
+     |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     |
+     = note: see issue #53667 <https://github.com/rust-lang/rust/issues/53667> for more information
+     = help: add `#![feature(let_chains)]` to the crate attributes to enable
+     = note: this compiler was built on 2025-09-15; consider upgrading it if it is out of date
+
+error[E0658]: `let` expressions in this position are unstable
+   --> core/modules/map.rs:668:10
+    |
+668 |       && let Some(code_cache_info) = code_cache_info.take()
+    |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = note: see issue #53667 <https://github.com/rust-lang/rust/issues/53667> for more information
+    = help: add `#![feature(let_chains)]` to the crate attributes to enable
+    = note: this compiler was built on 2025-09-15; consider upgrading it if it is out of date
+
+error[E0658]: `let` expressions in this position are unstable
+    --> core/modules/map.rs:1018:8
+     |
+1018 |     if let Some(id) = self.get_id(resolved_specifier.as_str(), module_type)
+     |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     |
+     = note: see issue #53667 <https://github.com/rust-lang/rust/issues/53667> for more information
+     = help: add `#![feature(let_chains)]` to the crate attributes to enable
+     = note: this compiler was built on 2025-09-15; consider upgrading it if it is out of date
+
+error[E0658]: `let` expressions in this position are unstable
+    --> core/modules/map.rs:1019:10
+     |
+1019 |       && let Some(handle) = self.get_handle(id)
+     |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     |
+     = note: see issue #53667 <https://github.com/rust-lang/rust/issues/53667> for more information
+     = help: add `#![feature(let_chains)]` to the crate attributes to enable
+     = note: this compiler was built on 2025-09-15; consider upgrading it if it is out of date
+
+error[E0658]: `let` expressions in this position are unstable
+    --> core/modules/map.rs:1068:8
+     |
+1068 |     if let Ok(module_specifier) = &resolve_result
+     |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     |
+     = note: see issue #53667 <https://github.com/rust-lang/rust/issues/53667> for more information
+     = help: add `#![feature(let_chains)]` to the crate attributes to enable
+     = note: this compiler was built on 2025-09-15; consider upgrading it if it is out of date
+
+error[E0658]: `let` expressions in this position are unstable
+    --> core/modules/map.rs:1069:10
+     |
+1069 |         && let Some(id) = self
+     |  __________^
+1070 | |         .data
+1071 | |         .borrow()
+1072 | |         .get_id(module_specifier.as_str(), &requested_module_type)
+     | |__________________________________________________________________^
+     |
+     = note: see issue #53667 <https://github.com/rust-lang/rust/issues/53667> for more information
+     = help: add `#![feature(let_chains)]` to the crate attributes to enable
+     = note: this compiler was built on 2025-09-15; consider upgrading it if it is out of date
+
+error[E0658]: `let` expressions in this position are unstable
+   --> core/modules/recursive_load.rs:127:8
+    |
+127 |     if let Ok(root_specifier) = load.resolve_root()
+    |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = note: see issue #53667 <https://github.com/rust-lang/rust/issues/53667> for more information
+    = help: add `#![feature(let_chains)]` to the crate attributes to enable
+    = note: this compiler was built on 2025-09-15; consider upgrading it if it is out of date
+
+error[E0658]: `let` expressions in this position are unstable
+   --> core/modules/recursive_load.rs:128:10
+    |
+128 |         && let Some(module_id) =
+    |  __________^
+129 | |         module_map_rc.get_id(root_specifier.as_str(), requested_module_type)
+    | |____________________________________________________________________________^
+    |
+    = note: see issue #53667 <https://github.com/rust-lang/rust/issues/53667> for more information
+    = help: add `#![feature(let_chains)]` to the crate attributes to enable
+    = note: this compiler was built on 2025-09-15; consider upgrading it if it is out of date
+
+error[E0658]: `let` expressions in this position are unstable
+   --> core/modules/recursive_load.rs:307:20
+    |
+307 |                 if let Ok(source) = &load_result
+    |                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = note: see issue #53667 <https://github.com/rust-lang/rust/issues/53667> for more information
+    = help: add `#![feature(let_chains)]` to the crate attributes to enable
+    = note: this compiler was built on 2025-09-15; consider upgrading it if it is out of date
+
+error[E0658]: `let` expressions in this position are unstable
+   --> core/modules/recursive_load.rs:308:22
+    |
+308 |                   && let Some(found_specifier) = &source.module_url_found
+    |                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = note: see issue #53667 <https://github.com/rust-lang/rust/issues/53667> for more information
+    = help: add `#![feature(let_chains)]` to the crate attributes to enable
+    = note: this compiler was built on 2025-09-15; consider upgrading it if it is out of date
+
+error[E0658]: `let` expressions in this position are unstable
+   --> core/ops_builtin_v8.rs:347:6
+    |
+347 |   if let Some(code_cache_hash) = maybe_code_cache_hash
+    |      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = note: see issue #53667 <https://github.com/rust-lang/rust/issues/53667> for more information
+    = help: add `#![feature(let_chains)]` to the crate attributes to enable
+    = note: this compiler was built on 2025-09-15; consider upgrading it if it is out of date
+
+error[E0658]: `let` expressions in this position are unstable
+   --> core/ops_builtin_v8.rs:348:8
+    |
+348 |     && let Some(cb) = state.eval_context_code_cache_ready_cb.borrow().as_ref()
+    |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = note: see issue #53667 <https://github.com/rust-lang/rust/issues/53667> for more information
+    = help: add `#![feature(let_chains)]` to the crate attributes to enable
+    = note: this compiler was built on 2025-09-15; consider upgrading it if it is out of date
+
+error[E0658]: `let` expressions in this position are unstable
+   --> core/runtime/bindings.rs:279:6
+    |
+279 |   if let Some(deno_obj_val) = maybe_deno_obj_val
+    |      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = note: see issue #53667 <https://github.com/rust-lang/rust/issues/53667> for more information
+    = help: add `#![feature(let_chains)]` to the crate attributes to enable
+    = note: this compiler was built on 2025-09-15; consider upgrading it if it is out of date
+
+error[E0658]: `let` expressions in this position are unstable
+   --> core/runtime/bindings.rs:815:8
+    |
+815 |     && let Some(proto) = state.ext_import_meta_proto.borrow().clone()
+    |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = note: see issue #53667 <https://github.com/rust-lang/rust/issues/53667> for more information
+    = help: add `#![feature(let_chains)]` to the crate attributes to enable
+    = note: this compiler was built on 2025-09-15; consider upgrading it if it is out of date
+
+error[E0658]: `let` expressions in this position are unstable
+   --> core/runtime/bindings.rs:935:10
+    |
+935 |       if let Some(stack_frame) = JsStackFrame::from_v8_message(scope, msg)
+    |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = note: see issue #53667 <https://github.com/rust-lang/rust/issues/53667> for more information
+    = help: add `#![feature(let_chains)]` to the crate attributes to enable
+    = note: this compiler was built on 2025-09-15; consider upgrading it if it is out of date
+
+error[E0658]: `let` expressions in this position are unstable
+   --> core/runtime/bindings.rs:936:12
+    |
+936 |         && let Some(location) = stack_frame.maybe_format_location()
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = note: see issue #53667 <https://github.com/rust-lang/rust/issues/53667> for more information
+    = help: add `#![feature(let_chains)]` to the crate attributes to enable
+    = note: this compiler was built on 2025-09-15; consider upgrading it if it is out of date
+
+error[E0658]: `let` expressions in this position are unstable
+   --> core/web_timeout.rs:272:8
+    |
+272 |       if let Some(TimerData { unrefd, .. }) =
+    |  ________^
+273 | |       self.data_map.borrow_mut().get_mut(&id)
+    | |_____________________________________________^
+    |
+    = note: see issue #53667 <https://github.com/rust-lang/rust/issues/53667> for more information
+    = help: add `#![feature(let_chains)]` to the crate attributes to enable
+    = note: this compiler was built on 2025-09-15; consider upgrading it if it is out of date
+
+error[E0658]: `let` expressions in this position are unstable
+   --> core/web_timeout.rs:282:8
+    |
+282 |       if let Some(TimerData { unrefd, .. }) =
+    |  ________^
+283 | |       self.data_map.borrow_mut().get_mut(&id)
+    | |_____________________________________________^
+    |
+    = note: see issue #53667 <https://github.com/rust-lang/rust/issues/53667> for more information
+    = help: add `#![feature(let_chains)]` to the crate attributes to enable
+    = note: this compiler was built on 2025-09-15; consider upgrading it if it is out of date
+
+error[E0053]: method `trace` has an incompatible type for trait
+  --> core/cppgc.rs:44:29
+   |
+44 |   fn trace(&self, _visitor: &mut v8::cppgc::Visitor) {
+   |                             ^^^^^^^^^^^^^^^^^^^^^^^ types differ in mutability
+   |
+   = note: expected signature `fn(&DummyT, &v8::cppgc::Visitor)`
+              found signature `fn(&DummyT, &mut v8::cppgc::Visitor)`
+help: change the parameter type to match the trait
+   |
+44 -   fn trace(&self, _visitor: &mut v8::cppgc::Visitor) {
+44 +   fn trace(&self, _visitor: &v8::cppgc::Visitor) {
+   |
+
+error[E0053]: method `trace` has an incompatible type for trait
+   --> core/cppgc.rs:107:28
+    |
+107 |   fn trace(&self, visitor: &mut v8::cppgc::Visitor) {
+    |                            ^^^^^^^^^^^^^^^^^^^^^^^ types differ in mutability
+    |
+    = note: expected signature `fn(&PrototypeChainStore, &v8::cppgc::Visitor)`
+               found signature `fn(&PrototypeChainStore, &mut v8::cppgc::Visitor)`
+help: change the parameter type to match the trait
+    |
+107 -   fn trace(&self, visitor: &mut v8::cppgc::Visitor) {
+107 +   fn trace(&self, visitor: &v8::cppgc::Visitor) {
+    |
+
+error[E0053]: method `trace` has an incompatible type for trait
+   --> core/cppgc.rs:125:28
+    |
+125 |   fn trace(&self, visitor: &mut v8::cppgc::Visitor) {
+    |                            ^^^^^^^^^^^^^^^^^^^^^^^ types differ in mutability
+    |
+    = note: expected signature `fn(&CppGcObject<_>, &v8::cppgc::Visitor)`
+               found signature `fn(&CppGcObject<_>, &mut v8::cppgc::Visitor)`
+help: change the parameter type to match the trait
+    |
+125 -   fn trace(&self, visitor: &mut v8::cppgc::Visitor) {
+125 +   fn trace(&self, visitor: &v8::cppgc::Visitor) {
+    |
+
+error[E0053]: method `trace` has an incompatible type for trait
+   --> core/cppgc.rs:458:28
+    |
+458 |   fn trace(&self, visitor: &mut v8::cppgc::Visitor) {
+    |                            ^^^^^^^^^^^^^^^^^^^^^^^ types differ in mutability
+    |
+    = note: expected signature `fn(&cppgc::Member<_>, &v8::cppgc::Visitor)`
+               found signature `fn(&cppgc::Member<_>, &mut v8::cppgc::Visitor)`
+help: change the parameter type to match the trait
+    |
+458 -   fn trace(&self, visitor: &mut v8::cppgc::Visitor) {
+458 +   fn trace(&self, visitor: &v8::cppgc::Visitor) {
+    |
+
+error[E0599]: no method named `as_ref` found for struct `Ptr<CppGcObject<T>>` in the current scope
+   --> core/cppgc.rs:402:19
+    |
+402 |   if unsafe { obj.as_ref() }.tag != TypeId::of::<T>() {
+    |                   ^^^^^^
+    |
+    = help: items from traits can only be used if the trait is implemented and in scope
+    = note: the following trait defines an item `as_ref`, perhaps you need to implement it:
+            candidate #1: `AsRef`
+help: there is a method `pipe_as_ref` with a similar name, but with different arguments
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tap-1.0.1/src/pipe.rs:183:2
+    |
+183 | /     fn pipe_as_ref<'a, U, R>(&'a self, func: impl FnOnce(&'a U) -> R) -> R
+184 | |     where
+185 | |         Self: AsRef<U>,
+186 | |         U: 'a + ?Sized,
+187 | |         R: 'a + Sized,
+    | |______________________^
+
+error[E0624]: method `get` is private
+   --> core/cppgc.rs:419:17
+    |
+419 |       &self.inner.get().unwrap().member
+    |                   ^^^ private method
+    |
+   ::: /home/danbugs/repos/rusty_v8/src/cppgc.rs:664:1
+    |
+664 | / persistent! {
+665 | |   /// Persistent is a way to create a strong pointer from an off-heap obje...
+666 | |   /// another on-heap object. As long as the Persistent handle is alive th...
+667 | |   /// keep the object pointed to alive. The Persistent handle is always a ...
+...   |
+670 | |   Persistent
+671 | | }
+    | |_- private method defined here
+
+error[E0599]: no method named `as_ref` found for struct `Ptr<PrototypeChainStore>` in the current scope
+   --> core/cppgc.rs:488:36
+    |
+488 |     let obj = unsafe { proto_chain.as_ref().0[proto_index].as_ref()? };
+    |                                    ^^^^^^
+    |
+    = help: items from traits can only be used if the trait is implemented and in scope
+    = note: the following trait defines an item `as_ref`, perhaps you need to implement it:
+            candidate #1: `AsRef`
+help: there is a method `pipe_as_ref` with a similar name, but with different arguments
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tap-1.0.1/src/pipe.rs:183:2
+    |
+183 | /     fn pipe_as_ref<'a, U, R>(&'a self, func: impl FnOnce(&'a U) -> R) -> R
+184 | |     where
+185 | |         Self: AsRef<U>,
+186 | |         U: 'a + ?Sized,
+187 | |         R: 'a + Sized,
+    | |______________________^
+
+error[E0599]: no method named `as_ref` found for struct `Ptr<CppGcObject<T>>` in the current scope
+   --> core/cppgc.rs:496:21
+    |
+496 |     if unsafe { obj.as_ref() }.tag != TypeId::of::<T>() {
+    |                     ^^^^^^
+    |
+    = help: items from traits can only be used if the trait is implemented and in scope
+    = note: the following trait defines an item `as_ref`, perhaps you need to implement it:
+            candidate #1: `AsRef`
+help: there is a method `pipe_as_ref` with a similar name, but with different arguments
+   --> /home/danbugs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tap-1.0.1/src/pipe.rs:183:2
+    |
+183 | /     fn pipe_as_ref<'a, U, R>(&'a self, func: impl FnOnce(&'a U) -> R) -> R
+184 | |     where
+185 | |         Self: AsRef<U>,
+186 | |         U: 'a + ?Sized,
+187 | |         R: 'a + Sized,
+    | |______________________^
+
+Some errors have detailed explanations: E0053, E0412, E0433, E0599, E0624, E0658.
+For more information about an error, try `rustc --explain E0053`.
+error: could not compile `deno_core` (lib) due to 42 previous errors
+warning: build failed, waiting for other jobs to finish...
+    Building [=======================> ] 522/535: v8(build)                        

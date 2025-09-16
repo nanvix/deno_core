@@ -4,6 +4,7 @@
 #![deny(clippy::print_stdout)]
 #![deny(clippy::unused_async)]
 #![deny(clippy::unnecessary_wraps)]
+#![feature(rustc_private)]
 
 pub mod arena;
 mod async_cancel;

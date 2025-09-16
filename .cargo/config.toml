@@ -1,6 +1,44 @@
 [patch.crates-io]
-libc = { git = "https://github.com/nanvix/libc", rev = "87fbecbfbe5d870f007dbf77dd46c17197b29384" }
+libc = { git = "https://github.com/nanvix/libc", rev = "3bbfdf2b3c0b908affd2c9d4d8d5ad72cdb0e9ee" }
 libloading = { git = "https://github.com/nanvix/rust_libloading", branch = "nanvix/v0.8.8" }
-errno = { git = "https://github.com/nanvix/rust-errno", branch = "nanvix/v0.3.13" }
 fslock = { git = "https://github.com/nanvix/fslock", branch = "nanvix/v0.2.1" }
 clang-sys = { git = "https://github.com/nanvix/clang-sys", rev = "ee92b8a58fa3031b4fd34bf2e15906f016984263" }
+getrandom = { version = "0.2.16", git = "https://github.com/nanvix/getrandom", rev = "607437428870d478fdda09fb7f8e3e355be8a72b" }
+getrandom2 = { version = "0.3.3", git = "https://github.com/nanvix/getrandom", rev = "887379e90c9d600fd38dbc1a8df84d8d2289392a", package = "getrandom" }
+rand = { git = "https://github.com/nanvix/rand", rev = "ad5ece204300b42c4f458f52d3e2cd6150301675" }
+parking_lot_core = { git = "https://github.com/nanvix/parking_lot", rev = "42184ad69c725daa8b6eb2d80f7cf1a592e03cfc", package = "parking_lot_core" }
+socket2 = { git = "https://github.com/nanvix/socket2", rev = "406b4721bccc0c4fea626b3e4dd882363f5fc2fc" }
+mio = { git = "https://github.com/nanvix/mio", rev = "44499446a4a34b2d60b0090d1bb592fc0be107fe" }
+tokio = { git = "https://github.com/nanvix/tokio", rev = "db40f92fcce82bb8f7129432269d548120abf451" }
+serde = { git = "https://github.com/nanvix/serde", rev = "49d098debdf8b5c38bfb6868f455c6ce542c422c" }
+serde_json = { git = "https://github.com/nanvix/json", rev = "d96b1d9b643b49a0bb92a8cf280daf6aa08f37cc" }
+stacker = { git = "https://github.com/nanvix/stacker", rev = "d8747e30de16b1e10d33ce9987fbba1a0c295863" }
+deno_error = { git = "https://github.com/nanvix/deno_error", rev = "00322f8c25fac34996fbc6370f8ba80747a9cd26" }
+
+[target.i686-unknown-nanvix]
+rustflags = [
+    "-C",
+    "target-cpu=i686",
+    "-C",
+    "relocation-model=static",
+    "-C",
+    "link-arg=/tmp/nanvix_stubs.o",
+    "-C",
+    "link-arg=-T/home/danbugs/repos/nanvix/build/user/linker/x86/user.ld",
+    "-C",
+    "link-arg=-L/home/danbugs/repos/nanvix-toolchain-v09x-copy/lib/i686-unknown-nanvix/",
+    "-C",
+    "link-arg=-lc++",
+    "-C",
+    "link-arg=-lc++abi",
+    "-C",
+    "link-arg=-L/home/danbugs/repos/nanvix-toolchain-v09x-copy/i686-nanvix/lib/",
+    "-C",
+    "link-arg=-lc",
+    "-C",
+    "link-arg=-lm",
+    "-C",
+    "link-arg=-L/home/danbugs/repos/nanvix-toolchain-v09x-copy/lib/clang/21/lib/i386-unknown-nanvix/",
+    "-C",
+    "link-arg=-lclang_rt.builtins",
+]

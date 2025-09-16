@@ -676,8 +676,7 @@ dependencies = [
 [[package]]
 name = "deno_error"
 version = "0.5.7"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e983933fb4958fbe1e0a63c1e89a2af72b12c409e86404e547955564e6e217b8"
+source = "git+https://github.com/nanvix/deno_error?rev=82bd5299136910b852285e34d75c6bc53d167122#82bd5299136910b852285e34d75c6bc53d167122"
 dependencies = [
  "deno_error_macro",
  "libc 0.2.174 (git+https://github.com/nanvix/libc?rev=3bbfdf2b3c0b908affd2c9d4d8d5ad72cdb0e9ee)",
@@ -690,8 +689,7 @@ dependencies = [
 [[package]]
 name = "deno_error_macro"
 version = "0.5.7"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a1ad5ae3ef15db33e917d6ed54b53d0a98d068c4d1217eb35a4997423203c3ef"
+source = "git+https://github.com/nanvix/deno_error?rev=82bd5299136910b852285e34d75c6bc53d167122#82bd5299136910b852285e34d75c6bc53d167122"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -700,9 +698,8 @@ dependencies = [
 
 [[package]]
 name = "deno_media_type"
-version = "0.2.9"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f0ec0dada9dc5ac4733b4175d36f6a150b7dd68fab46db35cb1ef00dd7366acb"
+version = "0.2.1"
+source = "git+https://github.com/denoland/deno_media_type?rev=02254260c245243f4814471defa7965503f631ef#02254260c245243f4814471defa7965503f631ef"
 dependencies = [
  "data-url",
  "serde",
@@ -1387,9 +1384,9 @@ checksum = "4a5f13b858c8d314ee3e8f639011f7ccefe71f97f96e50151fb991f267928e2c"
 
 [[package]]
 name = "js-sys"
-version = "0.3.78"
+version = "0.3.79"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0c0b063578492ceec17683ef2f8c5e89121fbd0b172cbc280635ab7567db2738"
+checksum = "6247da8b8658ad4e73a186e747fcc5fc2a29f979d6fe6269127fdb5fd08298d0"
 dependencies = [
  "once_cell",
  "wasm-bindgen",
@@ -3142,9 +3139,9 @@ dependencies = [
 
 [[package]]
 name = "wasm-bindgen"
-version = "0.2.101"
+version = "0.2.102"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7e14915cadd45b529bb8d1f343c4ed0ac1de926144b746e2710f9cd05df6603b"
+checksum = "4ad224d2776649cfb4f4471124f8176e54c1cca67a88108e30a0cd98b90e7ad3"
 dependencies = [
  "cfg-if",
  "once_cell",
@@ -3155,9 +3152,9 @@ dependencies = [
 
 [[package]]
 name = "wasm-bindgen-backend"
-version = "0.2.101"
+version = "0.2.102"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e28d1ba982ca7923fd01448d5c30c6864d0a14109560296a162f80f305fb93bb"
+checksum = "3a1364104bdcd3c03f22b16a3b1c9620891469f5e9f09bc38b2db121e593e732"
 dependencies = [
  "bumpalo",
  "log",
@@ -3169,9 +3166,9 @@ dependencies = [
 
 [[package]]
 name = "wasm-bindgen-macro"
-version = "0.2.101"
+version = "0.2.102"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7c3d463ae3eff775b0c45df9da45d68837702ac35af998361e2c84e7c5ec1b0d"
+checksum = "0d7ab4ca3e367bb1ed84ddbd83cc6e41e115f8337ed047239578210214e36c76"
 dependencies = [
  "quote",
  "wasm-bindgen-macro-support",
@@ -3179,9 +3176,9 @@ dependencies = [
 
 [[package]]
 name = "wasm-bindgen-macro-support"
-version = "0.2.101"
+version = "0.2.102"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7bb4ce89b08211f923caf51d527662b75bdc9c9c7aab40f86dcb9fb85ac552aa"
+checksum = "4a518014843a19e2dbbd0ed5dfb6b99b23fb886b14e6192a00803a3e14c552b0"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -3192,9 +3189,9 @@ dependencies = [
 
 [[package]]
 name = "wasm-bindgen-shared"
-version = "0.2.101"
+version = "0.2.102"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f143854a3b13752c6950862c906306adb27c7e839f7414cec8fea35beab624c1"
+checksum = "255eb0aa4cc2eea3662a00c2bbd66e93911b7361d5e0fcd62385acfd7e15dcee"
 dependencies = [
  "unicode-ident",
 ]
@@ -3211,9 +3208,9 @@ dependencies = [
 
 [[package]]
 name = "web-sys"
-version = "0.3.78"
+version = "0.3.79"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "77e4b637749ff0d92b8fad63aa1f7cff3cbe125fd49c175cd6345e7272638b12"
+checksum = "50462a022f46851b81d5441d1a6f5bac0b21a1d72d64bd4906fbdd4bf7230ec7"
 dependencies = [
  "js-sys",
  "wasm-bindgen",
@@ -3560,11 +3557,6 @@ dependencies = [
  "quote",
  "syn 2.0.106",
 ]
-
-[[patch.unused]]
-name = "deno_error"
-version = "0.7.0"
-source = "git+https://github.com/nanvix/deno_error?rev=00322f8c25fac34996fbc6370f8ba80747a9cd26#00322f8c25fac34996fbc6370f8ba80747a9cd26"
 
 [[patch.unused]]
 name = "mio"

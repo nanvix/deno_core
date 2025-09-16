@@ -39,7 +39,7 @@ pub trait PrototypeChain {
 const MAX_PROTO_CHAIN: usize = 3;
 
 struct DummyT;
-impl GarbageCollected for DummyT {
+unsafe impl GarbageCollected for DummyT {
   fn trace(&self, _visitor: &v8::cppgc::Visitor) {
     unreachable!();
   }
@@ -100,7 +100,7 @@ impl<T: GarbageCollected> From<v8::cppgc::Ptr<CppGcObject<T>>> for ErasedPtr {
 
 struct PrototypeChainStore([Option<ErasedPtr>; MAX_PROTO_CHAIN]);
 
-impl v8::cppgc::GarbageCollected for PrototypeChainStore {
+unsafe impl v8::cppgc::GarbageCollected for PrototypeChainStore {
   fn trace(&self, visitor: &v8::cppgc::Visitor) {
     // Trace all the objects top-down the prototype chain.
     //
@@ -116,7 +116,7 @@ impl v8::cppgc::GarbageCollected for PrototypeChainStore {
   }
 }
 
-impl<T: GarbageCollected> v8::cppgc::GarbageCollected for CppGcObject<T> {
+unsafe impl<T: GarbageCollected> v8::cppgc::GarbageCollected for CppGcObject<T> {
   fn trace(&self, visitor: &v8::cppgc::Visitor) {
     self.member.trace(visitor);
   }

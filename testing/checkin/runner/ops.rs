@@ -1,8 +1,8 @@
 // Copyright 2018-2025 the Deno authors. MIT license.
 
-use std::cell::Cell;
 use std::cell::RefCell;
 use std::rc::Rc;
+use std::sync::atomic::{AtomicU64, Ordering};
 
 use deno_core::GarbageCollected;
 use deno_core::OpState;
@@ -74,7 +74,7 @@ pub fn op_stats_delete(
 
 pub struct TestObjectWrap {}
 
-impl GarbageCollected for TestObjectWrap {
+unsafe impl GarbageCollected for TestObjectWrap {
   fn get_name(&self) -> &'static std::ffi::CStr {
     c"TestObjectWrap"
   }
@@ -122,7 +122,7 @@ impl TestObjectWrap {
 
 pub struct DOMPoint {}
 
-impl GarbageCollected for DOMPoint {
+unsafe impl GarbageCollected for DOMPoint {
   fn get_name(&self) -> &'static std::ffi::CStr {
     c"DOMPoint"
   }
@@ -145,22 +145,36 @@ impl DOMPointReadOnly {
     }
 
     Ok(DOMPointReadOnly {
-      x: get(scope, other, "x").unwrap_or(0.0).into(),
-      y: get(scope, other, "y").unwrap_or(0.0).into(),
-      z: get(scope, other, "z").unwrap_or(0.0).into(),
-      w: get(scope, other, "w").unwrap_or(0.0).into(),
+      x: AtomicU64::new(Self::f64_to_atomic(get(scope, other, "x").unwrap_or(0.0))),
+      y: AtomicU64::new(Self::f64_to_atomic(get(scope, other, "y").unwrap_or(0.0))),
+      z: AtomicU64::new(Self::f64_to_atomic(get(scope, other, "z").unwrap_or(0.0))),
+      w: AtomicU64::new(Self::f64_to_atomic(get(scope, other, "w").unwrap_or(0.0))),
     })
   }
 }
 
 pub struct DOMPointReadOnly {
-  x: Cell<f64>,
-  y: Cell<f64>,
-  z: Cell<f64>,
-  w: Cell<f64>,
+  x: AtomicU64,
+  y: AtomicU64,
+  z: AtomicU64,
+  w: AtomicU64,
 }
 
-impl GarbageCollected for DOMPointReadOnly {
+impl DOMPointReadOnly {
+  fn bits_to_f64(bits: u64) -> f64 {
+    f64::from_bits(bits)
+  }
+  
+  fn f64_to_atomic(value: f64) -> u64 {
+    value.to_bits()
+  }
+  
+  fn atomic_to_f64(bits: u64) -> f64 {
+    f64::from_bits(bits)
+  }
+}
+
+unsafe impl GarbageCollected for DOMPointReadOnly {
   fn get_name(&self) -> &'static std::ffi::CStr {
     c"DOMPointReadOnly"
   }
@@ -170,22 +184,22 @@ impl GarbageCollected for DOMPointReadOnly {
 impl DOMPointReadOnly {
   #[getter]
   fn x(&self) -> f64 {
-    self.x.get()
+    Self::bits_to_f64(self.x.load(Ordering::Relaxed))
   }
 
   #[getter]
   fn y(&self) -> f64 {
-    self.y.get()
+    Self::bits_to_f64(self.y.load(Ordering::Relaxed))
   }
 
   #[getter]
   fn z(&self) -> f64 {
-    self.z.get()
+    Self::bits_to_f64(self.z.load(Ordering::Relaxed))
   }
 
   #[getter]
   fn w(&self) -> f64 {
-    self.w.get()
+    Self::bits_to_f64(self.w.load(Ordering::Relaxed))
   }
 }
 
@@ -200,10 +214,10 @@ impl DOMPoint {
     w: Option<f64>,
   ) -> (DOMPointReadOnly, DOMPoint) {
     let ro = DOMPointReadOnly {
-      x: Cell::new(x.unwrap_or(0.0)),
-      y: Cell::new(y.unwrap_or(0.0)),
-      z: Cell::new(z.unwrap_or(0.0)),
-      w: Cell::new(w.unwrap_or(0.0)),
+      x: AtomicU64::new(DOMPointReadOnly::f64_to_atomic(x.unwrap_or(0.0))),
+      y: AtomicU64::new(DOMPointReadOnly::f64_to_atomic(y.unwrap_or(0.0))),
+      z: AtomicU64::new(DOMPointReadOnly::f64_to_atomic(z.unwrap_or(0.0))),
+      w: AtomicU64::new(DOMPointReadOnly::f64_to_atomic(w.unwrap_or(0.0))),
     };
 
     (ro, DOMPoint {})
@@ -231,42 +245,42 @@ impl DOMPoint {
 
   #[setter]
   fn x(&self, x: f64, #[proto] ro: &DOMPointReadOnly) {
-    ro.x.set(x);
+    ro.x.store(DOMPointReadOnly::f64_to_atomic(x), Ordering::Relaxed);
   }
 
   #[getter]
   fn x(&self, #[proto] ro: &DOMPointReadOnly) -> f64 {
-    ro.x.get()
+    DOMPointReadOnly::atomic_to_f64(ro.x.load(Ordering::Relaxed))
   }
 
   #[setter]
   fn y(&self, y: f64, #[proto] ro: &DOMPointReadOnly) {
-    ro.y.set(y);
+    ro.y.store(DOMPointReadOnly::f64_to_atomic(y), Ordering::Relaxed);
   }
 
   #[getter]
   fn y(&self, #[proto] ro: &DOMPointReadOnly) -> f64 {
-    ro.y.get()
+    DOMPointReadOnly::atomic_to_f64(ro.y.load(Ordering::Relaxed))
   }
 
   #[setter]
   fn z(&self, z: f64, #[proto] ro: &DOMPointReadOnly) {
-    ro.z.set(z);
+    ro.z.store(DOMPointReadOnly::f64_to_atomic(z), Ordering::Relaxed);
   }
 
   #[getter]
   fn z(&self, #[proto] ro: &DOMPointReadOnly) -> f64 {
-    ro.z.get()
+    DOMPointReadOnly::atomic_to_f64(ro.z.load(Ordering::Relaxed))
   }
 
   #[setter]
   fn w(&self, w: f64, #[proto] ro: &DOMPointReadOnly) {
-    ro.w.set(w);
+    ro.w.store(DOMPointReadOnly::f64_to_atomic(w), Ordering::Relaxed);
   }
 
   #[getter]
   fn w(&self, #[proto] ro: &DOMPointReadOnly) -> f64 {
-    ro.w.get()
+    DOMPointReadOnly::atomic_to_f64(ro.w.load(Ordering::Relaxed))
   }
 
   #[fast]
@@ -290,7 +304,7 @@ pub enum TestEnumWrap {
   A,
 }
 
-impl GarbageCollected for TestEnumWrap {
+unsafe impl GarbageCollected for TestEnumWrap {
   fn get_name(&self) -> &'static std::ffi::CStr {
     c"TestEnumWrap"
   }
@@ -311,7 +325,7 @@ pub fn op_nop_generic<T: SomeType + 'static>(state: &mut OpState) {
 
 pub struct Foo;
 
-impl deno_core::GarbageCollected for Foo {
+unsafe impl deno_core::GarbageCollected for Foo {
   fn get_name(&self) -> &'static std::ffi::CStr {
     c"Foo"
   }

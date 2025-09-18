@@ -14,7 +14,7 @@ use super::alloc_layout;
 /// In debug mode we use a signature to ensure that raw pointers are pointing to the correct
 /// shape of arena object.
 #[cfg(debug_assertions)]
-const SIGNATURE: usize = 0x1234567812345678;
+const SIGNATURE: usize = 0x12345678;
 
 /// A very-`unsafe`, arena for raw pointers that falls back to raw allocation when full. This
 /// should be used with great care, and ideally you should only be using the higher-level arenas

@@ -56,12 +56,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "683d7910e743518b0e34f1186f92494becacb047c7b6bf616c96772180fef923"
 
 [[package]]
-name = "anes"
-version = "0.1.6"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4b46cbb362ab8752921c97e041f5e366ee6297bd428a31275b9fcf1e380f7299"
-
-[[package]]
 name = "anstream"
 version = "0.6.20"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -155,7 +149,7 @@ checksum = "6806a6321ec58106fea15becdad98371e28d92ccbc7c8f1b3b6dd724fe8f1002"
 dependencies = [
  "addr2line",
  "cfg-if",
- "libc 0.2.174 (git+https://github.com/nanvix/libc?rev=3bbfdf2b3c0b908affd2c9d4d8d5ad72cdb0e9ee)",
+ "libc 0.2.174 (git+https://github.com/nanvix/libc?rev=d55f8b11e561c9a38330d6c062fbda26770ad9ec)",
  "miniz_oxide",
  "object",
  "rustc-demangle",
@@ -171,8 +165,7 @@ checksum = "9d297deb1925b89f2ccc13d7635fa0714f12c87adce1c75356b39ca9b7178567"
 [[package]]
 name = "base64-simd"
 version = "0.8.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "339abbe78e73178762e23bea9dfd08e697eb3f3301cd4be981c0f78ba5859195"
+source = "git+https://github.com/nanvix/simd?rev=1634fefe948807f24a48fb32a4a608b680e12f7b#1634fefe948807f24a48fb32a4a608b680e12f7b"
 dependencies = [
  "outref",
  "vsimd",
@@ -211,7 +204,7 @@ dependencies = [
  "bitflags",
  "cexpr",
  "clang-sys",
- "itertools 0.13.0",
+ "itertools",
  "log",
  "prettyplease",
  "proc-macro2",
@@ -308,12 +301,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "cast"
-version = "0.3.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "37b2a672a2cb129a2e41c10b1224bb368f9f37a2b16b612598138befd7b37eb5"
-
-[[package]]
 name = "cc"
 version = "1.2.37"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -339,39 +326,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2fd1289c04a9ea8cb22300a459a72a385d7c73d3259e2ed7dcb2af674838cfa9"
 
 [[package]]
-name = "ciborium"
-version = "0.2.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "42e69ffd6f0917f5c029256a24d0161db17cea3997d185db0d35926308770f0e"
-dependencies = [
- "ciborium-io",
- "ciborium-ll",
- "serde",
-]
-
-[[package]]
-name = "ciborium-io"
-version = "0.2.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "05afea1e0a06c9be33d539b876f1ce3692f4afea2cb41f740e7743225ed1c757"
-
-[[package]]
-name = "ciborium-ll"
-version = "0.2.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "57663b653d948a338bfb3eeba9bb2fd5fcfaecb9e199e87e1eda4d9e8b240fd9"
-dependencies = [
- "ciborium-io",
- "half",
-]
-
-[[package]]
 name = "clang-sys"
 version = "1.8.1"
 source = "git+https://github.com/nanvix/clang-sys?rev=ee92b8a58fa3031b4fd34bf2e15906f016984263#ee92b8a58fa3031b4fd34bf2e15906f016984263"
 dependencies = [
  "glob",
- "libc 0.2.174 (git+https://github.com/nanvix/libc?rev=3bbfdf2b3c0b908affd2c9d4d8d5ad72cdb0e9ee)",
+ "libc 0.2.174 (git+https://github.com/nanvix/libc?rev=d55f8b11e561c9a38330d6c062fbda26770ad9ec)",
  "libloading",
 ]
 
@@ -420,7 +380,7 @@ version = "0.2.17"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "59ed5838eebb26a2bb2e58f6d5b5316989ae9d08bab10e0e6d103e656d1b0280"
 dependencies = [
- "libc 0.2.174 (git+https://github.com/nanvix/libc?rev=3bbfdf2b3c0b908affd2c9d4d8d5ad72cdb0e9ee)",
+ "libc 0.2.174 (git+https://github.com/nanvix/libc?rev=d55f8b11e561c9a38330d6c062fbda26770ad9ec)",
 ]
 
 [[package]]
@@ -431,73 +391,6 @@ checksum = "9481c1c90cbf2ac953f07c8d4a58aa3945c425b7185c9154d67a65e4230da511"
 dependencies = [
  "cfg-if",
 ]
-
-[[package]]
-name = "criterion"
-version = "0.5.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f2b12d017a929603d80db1831cd3a24082f8137ce19c69e6447f54f5fc8d692f"
-dependencies = [
- "anes",
- "cast",
- "ciborium",
- "clap",
- "criterion-plot",
- "is-terminal",
- "itertools 0.10.5",
- "num-traits",
- "once_cell",
- "oorandom",
- "plotters",
- "rayon",
- "regex",
- "serde",
- "serde_derive 1.0.225",
- "serde_json",
- "tinytemplate",
- "walkdir",
-]
-
-[[package]]
-name = "criterion-plot"
-version = "0.5.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6b50826342786a51a89e2da3a28f1c32b06e387201bc2d19791f622c673706b1"
-dependencies = [
- "cast",
- "itertools 0.10.5",
-]
-
-[[package]]
-name = "crossbeam-deque"
-version = "0.8.6"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9dd111b7b7f7d55b72c0a6ae361660ee5853c9af73f70c3c2ef6858b950e2e51"
-dependencies = [
- "crossbeam-epoch",
- "crossbeam-utils",
-]
-
-[[package]]
-name = "crossbeam-epoch"
-version = "0.9.18"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5b82ac4a3c2ca9c3460964f020e1402edd5753411d7737aa39c3714ad1b5420e"
-dependencies = [
- "crossbeam-utils",
-]
-
-[[package]]
-name = "crossbeam-utils"
-version = "0.8.21"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d0a5c400df2834b80a4c3327b3aad3a4c4cd4de0629063962b03235697506a28"
-
-[[package]]
-name = "crunchy"
-version = "0.2.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "460fbee9c2c2f33933d720630a6a0bac33ba7053db5344fac858d4b8952d77d5"
 
 [[package]]
 name = "crypto-common"
@@ -618,7 +511,6 @@ dependencies = [
  "bytes",
  "capacity_builder",
  "cooked-waker",
- "criterion",
  "deno_ast",
  "deno_core_icudata",
  "deno_error",
@@ -628,7 +520,7 @@ dependencies = [
  "fastrand",
  "futures",
  "indexmap",
- "libc 0.2.174 (git+https://github.com/nanvix/libc?rev=3bbfdf2b3c0b908affd2c9d4d8d5ad72cdb0e9ee)",
+ "libc 0.2.174 (git+https://github.com/nanvix/libc?rev=d55f8b11e561c9a38330d6c062fbda26770ad9ec)",
  "parking_lot",
  "paste",
  "percent-encoding",
@@ -679,7 +571,7 @@ version = "0.5.7"
 source = "git+https://github.com/nanvix/deno_error?rev=82bd5299136910b852285e34d75c6bc53d167122#82bd5299136910b852285e34d75c6bc53d167122"
 dependencies = [
  "deno_error_macro",
- "libc 0.2.174 (git+https://github.com/nanvix/libc?rev=3bbfdf2b3c0b908affd2c9d4d8d5ad72cdb0e9ee)",
+ "libc 0.2.174 (git+https://github.com/nanvix/libc?rev=d55f8b11e561c9a38330d6c062fbda26770ad9ec)",
  "serde",
  "serde_json",
  "tokio",
@@ -887,7 +779,7 @@ name = "fslock"
 version = "0.2.1"
 source = "git+https://github.com/nanvix/fslock?branch=nanvix%2Fv0.2.1#d4d96e8071e3b7d8c1cdef2f2cc1dfd7b9898325"
 dependencies = [
- "libc 0.2.174 (git+https://github.com/nanvix/libc?rev=3bbfdf2b3c0b908affd2c9d4d8d5ad72cdb0e9ee)",
+ "libc 0.2.174 (git+https://github.com/nanvix/libc?rev=d55f8b11e561c9a38330d6c062fbda26770ad9ec)",
  "winapi",
 ]
 
@@ -1061,16 +953,6 @@ dependencies = [
  "tokio",
  "tokio-util",
  "tracing",
-]
-
-[[package]]
-name = "half"
-version = "2.6.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "459196ed295495a68f7d7fe1d84f6c4b7ff0e21fe3017b2f283c6fac3ad803c9"
-dependencies = [
- "cfg-if",
- "crunchy",
 ]
 
 [[package]]
@@ -1342,30 +1224,10 @@ dependencies = [
 ]
 
 [[package]]
-name = "is-terminal"
-version = "0.4.16"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e04d7f318608d35d4b61ddd75cbdaee86b023ebe2bd5a66ee0915f0bf93095a9"
-dependencies = [
- "hermit-abi",
- "libc 0.2.174 (git+https://github.com/nanvix/libc?rev=3bbfdf2b3c0b908affd2c9d4d8d5ad72cdb0e9ee)",
- "windows-sys 0.59.0",
-]
-
-[[package]]
 name = "is_terminal_polyfill"
 version = "1.70.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7943c866cc5cd64cbc25b2e01621d07fa8eb2a1a23160ee81ce38704e97b8ecf"
-
-[[package]]
-name = "itertools"
-version = "0.10.5"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b0fd2260e829bddf4cb6ea802289de2f86d6a7a690192fbe91b3f46e0f2c8473"
-dependencies = [
- "either",
-]
 
 [[package]]
 name = "itertools"
@@ -1384,9 +1246,9 @@ checksum = "4a5f13b858c8d314ee3e8f639011f7ccefe71f97f96e50151fb991f267928e2c"
 
 [[package]]
 name = "js-sys"
-version = "0.3.79"
+version = "0.3.80"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6247da8b8658ad4e73a186e747fcc5fc2a29f979d6fe6269127fdb5fd08298d0"
+checksum = "852f13bec5eba4ba9afbeb93fd7c13fe56147f055939ae21c43a29a0ecb2702e"
 dependencies = [
  "once_cell",
  "wasm-bindgen",
@@ -1406,7 +1268,7 @@ source = "git+https://github.com/nanvix/libc?branch=nanvix%2Fv0.2.173-dev#3e972f
 [[package]]
 name = "libc"
 version = "0.2.174"
-source = "git+https://github.com/nanvix/libc?rev=3bbfdf2b3c0b908affd2c9d4d8d5ad72cdb0e9ee#3bbfdf2b3c0b908affd2c9d4d8d5ad72cdb0e9ee"
+source = "git+https://github.com/nanvix/libc?rev=d55f8b11e561c9a38330d6c062fbda26770ad9ec#d55f8b11e561c9a38330d6c062fbda26770ad9ec"
 
 [[package]]
 name = "libc"
@@ -1528,7 +1390,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "91df4bbde75afed763b708b7eee1e8e7651e02d97f6d5dd763e89367e957b23b"
 dependencies = [
  "hermit-abi",
- "libc 0.2.174 (git+https://github.com/nanvix/libc?rev=3bbfdf2b3c0b908affd2c9d4d8d5ad72cdb0e9ee)",
+ "libc 0.2.174 (git+https://github.com/nanvix/libc?rev=d55f8b11e561c9a38330d6c062fbda26770ad9ec)",
 ]
 
 [[package]]
@@ -1553,12 +1415,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a4895175b425cb1f87721b59f0f286c2092bd4af812243672510e1ac53e2e0ad"
 
 [[package]]
-name = "oorandom"
-version = "11.1.5"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d6790f58c7ff633d8771f42965289203411a5e5c68388703c06e14f24770b41e"
-
-[[package]]
 name = "outref"
 version = "0.5.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1580,7 +1436,7 @@ version = "0.9.11"
 source = "git+https://github.com/nanvix/parking_lot?rev=42184ad69c725daa8b6eb2d80f7cf1a592e03cfc#42184ad69c725daa8b6eb2d80f7cf1a592e03cfc"
 dependencies = [
  "cfg-if",
- "libc 0.2.174 (git+https://github.com/nanvix/libc?rev=3bbfdf2b3c0b908affd2c9d4d8d5ad72cdb0e9ee)",
+ "libc 0.2.174 (git+https://github.com/nanvix/libc?rev=d55f8b11e561c9a38330d6c062fbda26770ad9ec)",
  "redox_syscall",
  "smallvec",
  "windows-targets 0.52.6",
@@ -1677,34 +1533,6 @@ name = "pin-utils"
 version = "0.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8b870d8c151b6f2fb93e84a13146138f05d02ed11c7e7c54f8826aaaf7c9f184"
-
-[[package]]
-name = "plotters"
-version = "0.3.7"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5aeb6f403d7a4911efb1e33402027fc44f29b5bf6def3effcc22d7bb75f2b747"
-dependencies = [
- "num-traits",
- "plotters-backend",
- "plotters-svg",
- "wasm-bindgen",
- "web-sys",
-]
-
-[[package]]
-name = "plotters-backend"
-version = "0.3.7"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "df42e13c12958a16b3f7f4386b9ab1f3e7933914ecea48da7139435263a4172a"
-
-[[package]]
-name = "plotters-svg"
-version = "0.3.7"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "51bae2ac328883f7acdfea3d66a7c35751187f870bc81f94563733a154d7a670"
-dependencies = [
- "plotters-backend",
-]
 
 [[package]]
 name = "potential_utf"
@@ -1839,7 +1667,7 @@ name = "rand"
 version = "0.8.5"
 source = "git+https://github.com/nanvix/rand?rev=ad5ece204300b42c4f458f52d3e2cd6150301675#ad5ece204300b42c4f458f52d3e2cd6150301675"
 dependencies = [
- "libc 0.2.174 (git+https://github.com/nanvix/libc?rev=3bbfdf2b3c0b908affd2c9d4d8d5ad72cdb0e9ee)",
+ "libc 0.2.174 (git+https://github.com/nanvix/libc?rev=d55f8b11e561c9a38330d6c062fbda26770ad9ec)",
  "rand_chacha",
  "rand_core",
 ]
@@ -1859,26 +1687,6 @@ version = "0.6.4"
 source = "git+https://github.com/nanvix/rand?rev=ad5ece204300b42c4f458f52d3e2cd6150301675#ad5ece204300b42c4f458f52d3e2cd6150301675"
 dependencies = [
  "getrandom 0.2.16",
-]
-
-[[package]]
-name = "rayon"
-version = "1.11.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "368f01d005bf8fd9b1206fb6fa653e6c4a81ceb1466406b81792d87c5677a58f"
-dependencies = [
- "either",
- "rayon-core",
-]
-
-[[package]]
-name = "rayon-core"
-version = "1.13.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "22e18b0f0062d30d4230b2e85ff77fdfe4326feb054b9783a3460d8435c8ab91"
-dependencies = [
- "crossbeam-deque",
- "crossbeam-utils",
 ]
 
 [[package]]
@@ -2000,15 +1808,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "dd29631678d6fb0903b69223673e122c32e9ae559d0960a38d574695ebc0ea15"
 
 [[package]]
-name = "same-file"
-version = "1.0.6"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "93fc1dc3aaa9bfed95e02e6eadabb4baf7e3078b0bd1b4d7b6b0b68378900502"
-dependencies = [
- "winapi-util",
-]
-
-[[package]]
 name = "scoped-tls"
 version = "1.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2120,8 +1919,7 @@ dependencies = [
 [[package]]
 name = "sha1"
 version = "0.10.6"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e3bf829a2d51ab4a5ddf1352d8470c140cadc8301b2ae1789db023f01cedd6ba"
+source = "git+https://github.com/nanvix/hashes?rev=b19d8dcbe8cf5471a31cdde4a5fb5af07231ce38#b19d8dcbe8cf5471a31cdde4a5fb5af07231ce38"
 dependencies = [
  "cfg-if",
  "cpufeatures",
@@ -2140,7 +1938,7 @@ version = "1.4.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b2a4719bff48cee6b39d12c020eeb490953ad2443b7055bd0b21fca26bd8c28b"
 dependencies = [
- "libc 0.2.174 (git+https://github.com/nanvix/libc?rev=3bbfdf2b3c0b908affd2c9d4d8d5ad72cdb0e9ee)",
+ "libc 0.2.174 (git+https://github.com/nanvix/libc?rev=d55f8b11e561c9a38330d6c062fbda26770ad9ec)",
 ]
 
 [[package]]
@@ -2224,7 +2022,7 @@ source = "git+https://github.com/nanvix/stacker?rev=d8747e30de16b1e10d33ce9987fb
 dependencies = [
  "cc",
  "cfg-if",
- "libc 0.2.174 (git+https://github.com/nanvix/libc?rev=3bbfdf2b3c0b908affd2c9d4d8d5ad72cdb0e9ee)",
+ "libc 0.2.174 (git+https://github.com/nanvix/libc?rev=d55f8b11e561c9a38330d6c062fbda26770ad9ec)",
  "psm",
  "windows-sys 0.59.0",
 ]
@@ -2806,16 +2604,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "tinytemplate"
-version = "1.2.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "be4d6b5f19ff7664e8c98d03e2139cb510db9b0a60b55f8e8709b689d939b6bc"
-dependencies = [
- "serde",
- "serde_json",
-]
-
-[[package]]
 name = "tokio"
 version = "1.45.1"
 source = "git+https://github.com/nanvix/tokio?rev=db40f92fcce82bb8f7129432269d548120abf451#db40f92fcce82bb8f7129432269d548120abf451"
@@ -3091,18 +2879,7 @@ checksum = "0b928f33d975fc6ad9f86c8f283853ad26bdd5b10b7f1542aa2fa15e2289105a"
 [[package]]
 name = "vsimd"
 version = "0.8.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5c3082ca00d5a5ef149bb8b555a72ae84c9c59f7250f013ac822ac2e49b19c64"
-
-[[package]]
-name = "walkdir"
-version = "2.5.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "29790946404f91d9c5d06f9874efddea1dc06c5efe94541a7d6863108e3a5e4b"
-dependencies = [
- "same-file",
- "winapi-util",
-]
+source = "git+https://github.com/nanvix/simd?rev=1634fefe948807f24a48fb32a4a608b680e12f7b#1634fefe948807f24a48fb32a4a608b680e12f7b"
 
 [[package]]
 name = "want"
@@ -3139,9 +2916,9 @@ dependencies = [
 
 [[package]]
 name = "wasm-bindgen"
-version = "0.2.102"
+version = "0.2.103"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4ad224d2776649cfb4f4471124f8176e54c1cca67a88108e30a0cd98b90e7ad3"
+checksum = "ab10a69fbd0a177f5f649ad4d8d3305499c42bab9aef2f7ff592d0ec8f833819"
 dependencies = [
  "cfg-if",
  "once_cell",
@@ -3152,9 +2929,9 @@ dependencies = [
 
 [[package]]
 name = "wasm-bindgen-backend"
-version = "0.2.102"
+version = "0.2.103"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3a1364104bdcd3c03f22b16a3b1c9620891469f5e9f09bc38b2db121e593e732"
+checksum = "0bb702423545a6007bbc368fde243ba47ca275e549c8a28617f56f6ba53b1d1c"
 dependencies = [
  "bumpalo",
  "log",
@@ -3166,9 +2943,9 @@ dependencies = [
 
 [[package]]
 name = "wasm-bindgen-macro"
-version = "0.2.102"
+version = "0.2.103"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0d7ab4ca3e367bb1ed84ddbd83cc6e41e115f8337ed047239578210214e36c76"
+checksum = "fc65f4f411d91494355917b605e1480033152658d71f722a90647f56a70c88a0"
 dependencies = [
  "quote",
  "wasm-bindgen-macro-support",
@@ -3176,9 +2953,9 @@ dependencies = [
 
 [[package]]
 name = "wasm-bindgen-macro-support"
-version = "0.2.102"
+version = "0.2.103"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4a518014843a19e2dbbd0ed5dfb6b99b23fb886b14e6192a00803a3e14c552b0"
+checksum = "ffc003a991398a8ee604a401e194b6b3a39677b3173d6e74495eb51b82e99a32"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -3189,9 +2966,9 @@ dependencies = [
 
 [[package]]
 name = "wasm-bindgen-shared"
-version = "0.2.102"
+version = "0.2.103"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "255eb0aa4cc2eea3662a00c2bbd66e93911b7361d5e0fcd62385acfd7e15dcee"
+checksum = "293c37f4efa430ca14db3721dfbe48d8c33308096bd44d80ebaa775ab71ba1cf"
 dependencies = [
  "unicode-ident",
 ]
@@ -3204,16 +2981,6 @@ checksum = "2eeee3bdea6257cc36d756fa745a70f9d393571e47d69e0ed97581676a5369ca"
 dependencies = [
  "deno_error",
  "thiserror 2.0.16",
-]
-
-[[package]]
-name = "web-sys"
-version = "0.3.79"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "50462a022f46851b81d5441d1a6f5bac0b21a1d72d64bd4906fbdd4bf7230ec7"
-dependencies = [
- "js-sys",
- "wasm-bindgen",
 ]
 
 [[package]]

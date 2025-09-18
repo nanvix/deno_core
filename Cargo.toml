@@ -37,7 +37,7 @@ bit-set = "0.8.0"
 bit-vec = "0.8.0"
 bytes = ">=1.6.0"
 cooked-waker = "5"
-criterion = "0.5"
+# criterion = "0.5"  # Temporarily disabled for nanvix compatibility
 deno_path_util = "0.3.2"
 fastrand = "2"
 futures = "0.3.31"

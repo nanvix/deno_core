@@ -15,7 +15,7 @@ use super::ptr_byte_sub;
 /// In debug mode we use a signature to ensure that raw pointers are pointing to the correct
 /// shape of arena object.
 #[cfg(debug_assertions)]
-const SIGNATURE: usize = 0x8877665544332211;
+const SIGNATURE: usize = 0x88776655;
 
 pub struct ArenaUniqueReservation<T>(NonNull<ArenaBoxData<T>>);
 

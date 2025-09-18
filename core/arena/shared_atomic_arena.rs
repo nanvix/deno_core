@@ -17,7 +17,7 @@ use super::ptr_byte_sub;
 /// In debug mode we use a signature to ensure that raw pointers are pointing to the correct
 /// shape of arena object.
 #[cfg(debug_assertions)]
-const SIGNATURE: usize = 0x1133224455667788;
+const SIGNATURE: usize = 0x11332244;
 
 pub struct ArenaSharedAtomicReservation<T>(NonNull<ArenaArcData<T>>);
 

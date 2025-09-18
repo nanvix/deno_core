@@ -57,7 +57,7 @@ wasm_dep_analyzer = "0.2.0"
 
 [dev-dependencies]
 bencher.workspace = true
-criterion.workspace = true
+# criterion.workspace = true  # Temporarily disabled for nanvix compatibility
 deno_ast.workspace = true
 fastrand.workspace = true
 paste.workspace = true
